@@ -1,0 +1,21 @@
+﻿futures:
+  binance:
+    trades: C:\Users\andrei.barysenka\Documents\Trading\CryptoFeed\data\futures\binance_futures\*-trades.parquet
+    depth:  C:\Users\andrei.barysenka\Documents\Trading\CryptoFeed\data\futures\binance_futures\*-depth.parquet
+  bybit:
+    trades: C:\Users\andrei.barysenka\Documents\Trading\CryptoFeed\data\futures\bybit\*-trades.parquet
+    depth:  C:\Users\andrei.barysenka\Documents\Trading\CryptoFeed\data\futures\bybit\*-depth.parquet
+  okx:
+    trades: C:\Users\andrei.barysenka\Documents\Trading\CryptoFeed\data\futures\okx\*-trades.parquet
+    depth:  C:\Users\andrei.barysenka\Documents\Trading\CryptoFeed\data\futures\okx\*-depth.parquet
+
+spot:
+  binance:
+    trades: C:\Users\andrei.barysenka\Documents\Trading\CryptoFeed\data\spot\binance\*-trades.parquet
+    depth:  C:\Users\andrei.barysenka\Documents\Trading\CryptoFeed\data\spot\binance\*-depth.parquet
+  bybit:
+    trades: C:\Users\andrei.barysenka\Documents\Trading\CryptoFeed\data\spot\bybit\*-trades.parquet
+    depth:  C:\Users\andrei.barysenka\Documents\Trading\CryptoFeed\data\spot\bybit\*-depth.parquet
+  okx:
+    trades: C:\Users\andrei.barysenka\Documents\Trading\CryptoFeed\data\spot\okx\*-trades.parquet
+    depth:  C:\Users\andrei.barysenka\Documents\Trading\CryptoFeed\data\spot\okx\*-depth.parquet
