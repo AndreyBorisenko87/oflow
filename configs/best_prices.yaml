@@ -1,0 +1,66 @@
+# Конфигурация блока 05: Лучшие цены
+best_prices:
+  # Временные параметры
+  tick_size_ms: 10 # Шаг агрегации в миллисекундах
+  min_quotes_per_tick: 1 # Минимальное количество quotes на тик
+  
+  # Параметры восстановления
+  min_bid_ask_spread: 0.0001 # Минимальный спред bid-ask (в единицах цены)
+  max_bid_ask_spread: 100.0 # Максимальный спред bid-ask (в единицах цены)
+  require_both_sides: true # Требовать наличие и bid и ask
+  
+  # Фильтрация данных
+  min_level_size: 0.001 # Минимальный размер уровня для учета
+  max_price_deviation: 0.1 # Максимальное отклонение цены от предыдущей (10%)
+  
+  # Вычисление спредов
+  spread_calculation:
+    absolute: true # Абсолютный спред в единицах цены
+    relative: true # Относительный спред в процентах
+    rolling_window: 100 # Окно для скользящих средних
+  
+  # Волатильность
+  volatility:
+    enabled: true
+    window_size: 50 # Размер окна для расчета волатильности
+    min_periods: 10 # Минимальное количество периодов
+  
+  # Агрегация
+  aggregation:
+    method: "last" # Метод агрегации: last, first, mean, median
+    fill_method: "ffill" # Метод заполнения пропусков: ffill, bfill, interpolate
+  
+  # Валидация
+  validation:
+    check_price_monotonicity: true # Проверка монотонности цен
+    check_spread_sanity: true # Проверка разумности спредов
+    max_negative_spread: -0.0001 # Максимальный отрицательный спред
+  
+  # Экспорт
+  export:
+    compression: "snappy" # Тип сжатия для Parquet
+    include_metadata: true # Включать метаданные
+    save_intermediate: false # Сохранять промежуточные результаты
+  
+  # Производительность
+  performance:
+    batch_size: 10000 # Размер пакета для обработки
+    parallel_processing: false # Параллельная обработка (пока отключено)
+    memory_limit_gb: 4 # Лимит памяти для обработки
+  
+  # Логирование
+  log_level: "INFO"
+  log_progress: true # Логировать прогресс обработки
+  log_statistics: true # Логировать статистику по биржам
+  
+  # Биржевые специфики
+  exchange_overrides:
+    binance:
+      tick_size_ms: 10
+      min_level_size: 0.001
+    bybit:
+      tick_size_ms: 10
+      min_level_size: 0.001
+    okx:
+      tick_size_ms: 10
+      min_level_size: 0.001

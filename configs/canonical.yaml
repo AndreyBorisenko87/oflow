@@ -1,0 +1,139 @@
+# Конфигурация канонического слоя для пакетного сохранения данных
+
+# Настройки пакетирования
+batch:
+  days: 1                           # Размер пакета в днях
+  chunk_size: 10000                 # Размер чанка для обработки
+  max_files_per_batch: 100          # Максимальное количество файлов в пакете
+  min_records_per_file: 1000        # Минимальное количество записей для создания файла
+
+# Настройки сжатия
+compression:
+  type: "snappy"                    # Тип сжатия (snappy, gzip, lz4, brotli)
+  level: null                       # Уровень сжатия (null для значения по умолчанию)
+  
+# Настройки индексирования
+indexing:
+  enabled: true                     # Включить создание индексов
+  create_file_index: true           # Создать индекс файлов
+  create_time_index: true           # Создать временной индекс
+  create_exchange_index: true       # Создать индекс по биржам
+  create_symbol_index: true         # Создать индекс по символам
+
+# Настройки метаданных
+metadata:
+  enabled: true                     # Включить создание метаданных
+  include_schema: true              # Включить схему данных
+  include_statistics: true          # Включить статистику
+  include_checksums: false          # Включить контрольные суммы файлов
+  include_lineage: false            # Включить информацию о происхождении данных
+
+# Структура директорий
+directory:
+  structure: "type_based"           # Структура: type_based, date_based, hybrid
+  create_subdirs: true              # Создавать поддиректории для типов данных
+  date_format: "%Y/%m/%d"           # Формат дат в путях (при date_based)
+
+# Настройки экспорта
+export:
+  formats: ["parquet"]              # Форматы экспорта (parquet, csv, json)
+  parquet_engine: "pyarrow"         # Движок для parquet (pyarrow, fastparquet)
+  csv_separator: ","                # Разделитель для CSV
+  include_index: false              # Включать индекс DataFrame в файлы
+
+# Настройки валидации
+validation:
+  check_data_types: true            # Проверять типы данных
+  check_required_columns: true      # Проверять обязательные колонки
+  check_time_order: true            # Проверять сортировку по времени
+  check_duplicates: false           # Проверять дубликаты
+  max_null_ratio: 0.1               # Максимальная доля пустых значений
+
+# Поддерживаемые типы данных
+data_types:
+  quotes:
+    description: "Котировки лучших цен"
+    required_columns: ["ts_ns", "exchange", "symbol", "bid", "ask"]
+    optional_columns: ["bid_size", "ask_size", "spread", "mid"]
+    partition_by: ["exchange", "symbol"]
+    
+  book_top:
+    description: "Топ-зона стакана заявок"
+    required_columns: ["ts_ns", "exchange", "symbol", "side", "price", "size"]
+    optional_columns: ["level", "action", "depth"]
+    partition_by: ["exchange", "symbol"]
+    
+  tape:
+    description: "Лента сделок с анализом агрессии"
+    required_columns: ["ts_ns", "exchange", "symbol", "aggression_side"]
+    optional_columns: ["price", "size", "volume_window", "aggression_ratio"]
+    partition_by: ["exchange", "symbol"]
+    
+  nbbo:
+    description: "Лучшие цены по биржам"
+    required_columns: ["ts_ns", "best_bid", "best_ask"]
+    optional_columns: ["best_bid_exchange", "best_ask_exchange", "spread"]
+    partition_by: ["symbol"]
+    
+  basis:
+    description: "Базис спот-фьючерс"
+    required_columns: ["ts_ns", "spot_symbol", "futures_symbol", "basis_abs"]
+    optional_columns: ["basis_rel", "basis_category", "anomaly_score"]
+    partition_by: ["spot_symbol", "futures_symbol"]
+    
+  features:
+    description: "Признаки паттернов для детекторов"
+    required_columns: ["ts_ns", "exchange", "symbol"]
+    optional_columns: ["d1_score", "d2_score", "d3_score", "overall_detector_score"]
+    partition_by: ["exchange", "symbol"]
+    
+  events:
+    description: "События паттернов"
+    required_columns: ["ts_ns", "exchange", "symbol", "pattern_type"]
+    optional_columns: ["confidence", "metadata", "detector_name"]
+    partition_by: ["exchange", "symbol", "pattern_type"]
+    
+  trades:
+    description: "Сырые сделки"
+    required_columns: ["ts_ns", "exchange", "symbol", "price", "size"]
+    optional_columns: ["side", "trade_id", "buyer_maker"]
+    partition_by: ["exchange", "symbol"]
+    
+  depth:
+    description: "Сырые данные стакана"
+    required_columns: ["ts_ns", "exchange", "symbol", "side", "price", "size"]
+    optional_columns: ["action", "level", "order_id"]
+    partition_by: ["exchange", "symbol"]
+
+# Настройки производительности
+performance:
+  parallel_processing: false        # Параллельная обработка (требует dask)
+  max_workers: 4                    # Максимальное количество воркеров
+  memory_limit_gb: 8                # Лимит памяти в ГБ
+  use_memory_mapping: false         # Использовать memory mapping для больших файлов
+
+# Настройки очистки
+cleanup:
+  remove_temp_files: true           # Удалять временные файлы
+  remove_empty_dirs: true           # Удалять пустые директории
+  max_temp_file_age_hours: 24       # Максимальный возраст временных файлов
+
+# Настройки логирования
+logging:
+  progress_interval: 10             # Интервал логирования прогресса (батчи)
+  detailed_logging: false           # Детальное логирование
+  log_file_operations: false        # Логировать операции с файлами
+  log_statistics: true              # Логировать статистику
+
+# Настройки мониторинга
+monitoring:
+  track_file_sizes: true            # Отслеживать размеры файлов
+  track_processing_time: true       # Отслеживать время обработки
+  track_memory_usage: false         # Отслеживать использование памяти
+  create_reports: true              # Создавать отчеты о сохранении
+
+# Настройки безопасности
+security:
+  verify_checksums: false           # Проверять контрольные суммы
+  encrypt_metadata: false           # Шифровать метаданные
+  access_control: false             # Контроль доступа к файлам

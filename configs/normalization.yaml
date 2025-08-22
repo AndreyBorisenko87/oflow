@@ -1,0 +1,144 @@
+# Конфигурация блока 03: Нормализация
+normalization:
+  # Основные параметры
+  log_progress: true # Логировать прогресс нормализации
+  log_level: "INFO" # Уровень логирования
+  
+  # Нормализация trades
+  trades:
+    # Стандартизация колонок
+    column_mapping:
+      timestamp: "ts_ns"
+      time: "ts_ns"
+      ts: "ts_ns"
+      price: "price"
+      amount: "size"
+      quantity: "size"
+      qty: "size"
+      volume: "size"
+      side: "side"
+      type: "type"
+      trade_id: "trade_id"
+      order_id: "order_id"
+    
+    # Нормализация временных меток
+    timestamp:
+      target_format: "nanoseconds" # Целевой формат: nanoseconds, microseconds, milliseconds, seconds
+      auto_detect: true # Автоматическое определение формата
+      min_timestamp: 1e12 # Минимальная временная метка (в наносекундах)
+      max_timestamp: 1e20 # Максимальная временная метка (в наносекундах)
+    
+    # Нормализация стороны сделки
+    side:
+      standardize: true # Стандартизировать значения
+      allowed_values: ["buy", "sell"] # Разрешенные значения
+      mapping:
+        buy: ["buy", "b", "long"]
+        sell: ["sell", "s", "short"]
+    
+    # Нормализация типа сделки
+    type:
+      standardize: true # Стандартизировать значения
+      allowed_values: ["market", "limit"] # Разрешенные значения
+      mapping:
+        market: ["market", "m"]
+        limit: ["limit", "l"]
+    
+    # Валидация данных
+    validation:
+      check_prices: true # Проверять цены
+      min_price: 0.000001 # Минимальная цена
+      max_price: 1000000.0 # Максимальная цена
+      check_sizes: true # Проверять объемы
+      min_size: 0.000001 # Минимальный объем
+      max_size: 1000000.0 # Максимальный объем
+      remove_invalid: true # Удалять невалидные записи
+  
+  # Нормализация depth
+  depth:
+    # Стандартизация колонок
+    column_mapping:
+      timestamp: "ts_ns"
+      time: "ts_ns"
+      ts: "ts_ns"
+      price: "price"
+      amount: "size"
+      quantity: "size"
+      qty: "size"
+      volume: "size"
+      side: "side"
+      level: "level"
+      order_id: "order_id"
+      update_type: "update_type"
+    
+    # Нормализация временных меток
+    timestamp:
+      target_format: "nanoseconds"
+      auto_detect: true
+      min_timestamp: 1e12
+      max_timestamp: 1e20
+    
+    # Нормализация стороны
+    side:
+      standardize: true
+      allowed_values: ["bid", "ask"]
+      mapping:
+        bid: ["bid", "b", "buy"]
+        ask: ["ask", "a", "sell"]
+    
+    # Нормализация типа обновления
+    update_type:
+      standardize: true
+      allowed_values: ["new", "update", "delete"]
+      mapping:
+        new: ["new", "add", "insert"]
+        update: ["update", "modify", "change"]
+        delete: ["delete", "remove", "cancel"]
+    
+    # Валидация данных
+    validation:
+      check_prices: true
+      min_price: 0.000001
+      max_price: 1000000.0
+      check_sizes: true
+      min_size: 0.0 # Размер может быть 0 для удаления уровня
+      max_size: 1000000.0
+      remove_invalid: true
+  
+  # Общие настройки
+  general:
+    # Сортировка
+    sort_by_time: true # Сортировать по времени
+    reset_index: true # Сбрасывать индекс
+    
+    # Обработка ошибок
+    skip_errors: false # Пропускать ошибки
+    log_errors: true # Логировать ошибки
+    
+    # Производительность
+    batch_size: 10000 # Размер пакета для обработки
+    parallel_processing: false # Параллельная обработка (пока отключено)
+  
+  # Биржевые специфики
+  exchange_overrides:
+    binance:
+      timestamp_format: "milliseconds"
+      side_mapping:
+        buy: ["buy", "b"]
+        sell: ["sell", "s"]
+    bybit:
+      timestamp_format: "nanoseconds"
+      side_mapping:
+        buy: ["buy", "b"]
+        sell: ["sell", "s"]
+    okx:
+      timestamp_format: "milliseconds"
+      side_mapping:
+        buy: ["buy", "b"]
+        sell: ["sell", "s"]
+  
+  # Выходные данные
+  output:
+    save_normalized: false # Сохранять нормализованные данные
+    compression: "snappy" # Тип сжатия для Parquet
+    include_metadata: true # Включать метаданные

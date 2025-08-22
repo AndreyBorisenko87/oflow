@@ -1,0 +1,330 @@
+# Конфигурация экспорта разметки
+
+# Основные настройки экспорта
+export:
+  # Кодировка файлов
+  encoding: "utf-8"
+  
+  # Разделитель полей
+  separator: ","
+  
+  # Разделитель десятичных чисел
+  decimal_separator: "."
+  
+  # Формат даты
+  date_format: "%Y-%m-%d %H:%M:%S"
+  
+  # Включить заголовки колонок
+  include_headers: true
+  
+  # Формат чисел с плавающей точкой
+  float_format: "%.6f"
+  
+  # Создавать резервные копии
+  create_backups: true
+  
+  # Максимальный размер файла (в МБ)
+  max_file_size_mb: 100
+
+# Настройки TradingView
+tradingview:
+  # Включить экспорт для TradingView
+  enabled: true
+  
+  # Формат времени для TradingView
+  time_format: "%Y-%m-%d %H:%M:%S"
+  
+  # Колонки для экспорта
+  columns:
+    - "time"
+    - "price"
+    - "pattern"
+    - "confidence_pct"
+    - "strength"
+    - "volume_multiplier"
+    - "marker"
+    - "exchange"
+    - "symbol"
+  
+  # Создание меток
+  markers:
+    # Типы меток по паттернам
+    liquidity_vacuum_break: "LVB"
+    iceberg_fade: "ICB"
+    stop_run_continuation: "STP"
+    stop_run_failure: "STF"
+    book_imbalance: "IMB"
+    spoof_pull_trap: "SPF"
+    momentum_ignition: "MOM"
+    
+    # Уровни уверенности
+    high_confidence: "S"      # ≥0.8
+    medium_confidence: "M"    # 0.6-0.8
+    low_confidence: "W"       # <0.6
+  
+  # Фильтрация данных
+  filters:
+    # Минимальная уверенность
+    min_confidence: 0.5
+    
+    # Включить только активные паттерны
+    active_patterns_only: true
+    
+    # Фильтр по биржам
+    allowed_exchanges:
+      - "binance"
+      - "bybit"
+      - "okx"
+
+# Настройки ATAS
+atas:
+  # Включить экспорт для ATAS
+  enabled: true
+  
+  # Формат времени для ATAS
+  date_format: "%m/%d/%Y"
+  time_format: "%H:%M:%S"
+  
+  # Колонки для экспорта
+  columns:
+    - "Date"
+    - "Time"
+    - "Price"
+    - "Marker"
+    - "Color"
+    - "Pattern"
+    - "Confidence"
+    - "VolumeRatio"
+    - "Exchange"
+  
+  # Создание меток
+  markers:
+    # Уникальные метки для ATAS
+    liquidity_vacuum_break:
+      high: "LVB_HIGH"
+      medium: "LVB_MED"
+      low: "LVB_LOW"
+    
+    iceberg_fade:
+      high: "ICB_HIGH"
+      medium: "ICB_MED"
+      low: "ICB_LOW"
+    
+    stop_run_continuation:
+      high: "STP_HIGH"
+      medium: "STP_MED"
+      low: "STP_LOW"
+    
+    stop_run_failure:
+      high: "STF_HIGH"
+      medium: "STF_MED"
+      low: "STF_LOW"
+    
+    book_imbalance:
+      high: "IMB_HIGH"
+      medium: "IMB_MED"
+      low: "IMB_LOW"
+    
+    spoof_pull_trap:
+      high: "SPF_HIGH"
+      medium: "SPF_MED"
+      low: "SPF_LOW"
+    
+    momentum_ignition:
+      high: "MOM_HIGH"
+      medium: "MOM_MED"
+      low: "MOM_LOW"
+  
+  # Цветовая схема
+  colors:
+    # Цвета по типам паттернов
+    liquidity_vacuum_break: "RED"
+    iceberg_fade: "BLUE"
+    stop_run_continuation: "GREEN"
+    stop_run_failure: "ORANGE"
+    book_imbalance: "PURPLE"
+    spoof_pull_trap: "CYAN"
+    momentum_ignition: "YELLOW"
+    
+    # Интенсивность по уверенности
+    high_confidence: "BRIGHT"     # ≥0.8
+    medium_confidence: "NORMAL"   # 0.6-0.8
+    low_confidence: "DIM"         # <0.6
+  
+  # Фильтрация данных
+  filters:
+    # Минимальная уверенность
+    min_confidence: 0.5
+    
+    # Включить только активные паттерны
+    active_patterns_only: true
+    
+    # Фильтр по биржам
+    allowed_exchanges:
+      - "binance"
+      - "bybit"
+      - "okx"
+
+# Настройки общего экспорта
+general:
+  # Включить общий экспорт
+  enabled: true
+  
+  # Формат файла
+  filename: "marks_general.csv"
+  
+  # Включить все колонки
+  include_all_columns: true
+  
+  # Сортировка по времени
+  sort_by_time: true
+  
+  # Фильтрация
+  filters:
+    # Минимальная уверенность
+    min_confidence: 0.0
+    
+    # Включить все паттерны
+    all_patterns: true
+
+# Настройки отчетности
+reporting:
+  # Создать сводный отчет
+  create_summary: true
+  
+  # Формат сводного отчета
+  summary_format: "txt"
+  
+  # Включить статистику по паттернам
+  pattern_statistics: true
+  
+  # Включить статистику по биржам
+  exchange_statistics: true
+  
+  # Включить статистику по уверенности
+  confidence_statistics: true
+  
+  # Включить статистику по объему
+  volume_statistics: true
+  
+  # Включить временной анализ
+  time_analysis: true
+
+# Настройки производительности
+performance:
+  # Размер чанка для обработки
+  chunk_size: 10000
+  
+  # Использовать параллельную обработку
+  use_parallel: false
+  
+  # Количество воркеров
+  max_workers: 4
+  
+  # Оптимизировать использование памяти
+  optimize_memory: true
+  
+  # Сжатие файлов
+  compression: false
+
+# Настройки валидации
+validation:
+  # Включить валидацию данных
+  enabled: true
+  
+  # Проверка обязательных колонок
+  check_required_columns: true
+  
+  # Обязательные колонки
+  required_columns:
+    - "ts_ns"
+    - "pattern_type"
+    - "confidence"
+  
+  # Проверка качества данных
+  check_data_quality: true
+  
+  # Минимальное качество данных (0.0 - 1.0)
+  min_data_quality: 0.7
+  
+  # Проверка логичности данных
+  check_data_logic: true
+
+# Настройки логирования
+logging:
+  # Уровень логирования
+  level: "INFO"
+  
+  # Логировать детали экспорта
+  log_export_details: true
+  
+  # Логировать статистику
+  log_statistics: true
+  
+  # Логировать производительность
+  log_performance: false
+  
+  # Логировать ошибки валидации
+  log_validation_errors: true
+
+# Настройки для разных типов данных
+data_types:
+  # События детекторов
+  detector_events:
+    enabled: true
+    source_columns:
+      - "ts_ns"
+      - "exchange"
+      - "symbol"
+      - "pattern_type"
+      - "confidence"
+      - "volume_ratio"
+      - "price_level"
+      - "detector_score"
+  
+  # Результаты бэктеста
+  backtest_results:
+    enabled: true
+    source_columns:
+      - "entry_time"
+      - "exit_time"
+      - "entry_price"
+      - "exit_price"
+      - "position_size"
+      - "pnl"
+      - "pattern_type"
+      - "confidence"
+  
+  # Фичи паттернов
+  pattern_features:
+    enabled: true
+    source_columns:
+      - "ts_ns"
+      - "exchange"
+      - "symbol"
+      - "feature_vector"
+      - "detector_scores"
+      - "overall_score"
+
+# Настройки режимов работы
+modes:
+  # Режим разработки
+  development:
+    enabled: false
+    verbose_logging: true
+    save_debug_info: true
+    max_events: 1000
+    
+  # Режим тестирования
+  testing:
+    enabled: false
+    use_synthetic_data: false
+    strict_validation: true
+    max_events: 10000
+    
+  # Производственный режим
+  production:
+    enabled: true
+    optimize_for_speed: true
+    strict_validation: false
+    max_events: 1000000

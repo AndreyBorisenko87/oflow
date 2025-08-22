@@ -1,0 +1,88 @@
+# Конфигурация извлечения фич для детекторов паттернов
+
+# Временные настройки
+time:
+  tick_size_ms: 10              # Шаг агрегации в миллисекундах
+  min_window_ms: 1000           # Минимальное окно для анализа
+  max_window_ms: 60000          # Максимальное окно для анализа
+
+# Настройки стакана заявок
+orderbook:
+  top_levels: 10                # Количество уровней для анализа
+  min_level_size: 0.1           # Минимальный размер уровня
+  max_level_size: 1000000       # Максимальный размер уровня
+
+# D1: Вакуум ликвидности
+d1_vacuum:
+  threshold: 0.1                # Порог для определения пустого уровня
+  empty_levels: 3               # Минимальное количество пустых уровней
+  depth_normalization: 1000     # Нормализация глубины ликвидности
+
+# D2: Перелом на поглощении
+d2_absorption:
+  min_side_ratio: 0.7           # Минимальная доля одной стороны
+  max_price_move_ticks: 2       # Максимальное движение цены в тиках
+  min_total_volume: 100         # Минимальный общий объем
+  persistent_order_threshold: 50 # Порог стойкости заявки
+
+# D3: Тающий айсберг
+d3_iceberg:
+  same_price_trades: 10         # Количество сделок по одной цене
+  time_window_ms: 2000          # Временное окно в мс
+  min_total_volume: 200         # Минимальный общий объем
+  refresh_detect: true           # Включить детекцию обновлений
+
+# D4: Продолжение после выноса стопов
+d4_stop_run:
+  min_price_move_percent: 0.3   # Минимальное движение цены в %
+  time_window_ms: 2000          # Временное окно в мс
+  no_pullback_window_ms: 5000   # Окно проверки возврата в мс
+  min_volume_ratio: 3.0         # Минимальное соотношение объема
+
+# D5: Ложный вынос стопов
+d5_false_breakout:
+  break_extreme_confirm_ticks: 2 # Подтверждение пробития в тиках
+  reversal_window_ms: 5000      # Окно возврата в мс
+  reversal_threshold_ratio: 0.7 # Порог возврата
+  opposite_large_trade: true    # Требовать крупные сделки в обратную сторону
+
+# D6: Сильный перекос стакана
+d6_imbalance:
+  bid_ask_ratio: 3.0            # Соотношение bid/ask
+  level_wall_multiplier: 5.0    # Множитель стены
+  levels_depth: 5               # Глубина анализа уровней
+
+# D7: Спуфинг ловушка
+d7_spoofing:
+  large_order_multiplier: 5.0   # Множитель крупной заявки
+  distance_ticks: 2             # Расстояние от рынка в тиках
+  cancel_time_window_ms: 1000   # Окно снятия в мс
+  no_trade_executed: true       # Требовать отсутствия исполнения
+
+# D8: Разгон на импульсе
+d8_momentum:
+  acceleration_window_ms: 3000  # Окно анализа ускорения в мс
+  min_volume_ratio: 3.0         # Минимальное соотношение объема
+  one_side_ratio: 0.8           # Доля одной стороны
+  candle_body_ratio: 0.7        # Соотношение тела свечи
+
+# Настройки агрегации
+aggregation:
+  group_by_exchange: true        # Группировка по биржам
+  group_by_symbol: true          # Группировка по символам
+  group_by_time: true            # Группировка по времени
+  calculate_metrics: true        # Вычисление дополнительных метрик
+
+# Настройки экспорта
+export:
+  save_raw_features: true        # Сохранять сырые признаки
+  save_aggregated: true          # Сохранять агрегированные данные
+  save_summaries: true           # Сохранять сводки
+  compression: "snappy"          # Сжатие данных
+  batch_size: 10000              # Размер пакета для обработки
+
+# Настройки логирования
+logging:
+  progress_interval: 1000        # Интервал логирования прогресса
+  debug_level: false             # Включить детальное логирование
+  save_logs: true                # Сохранять логи в файл

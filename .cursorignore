@@ -1,0 +1,8 @@
+﻿*.parquet
+*.csv
+*.jsonl
+**/data/**
+**/data_normalized/**
+.venv/**
+node_modules/**
+.git/**
