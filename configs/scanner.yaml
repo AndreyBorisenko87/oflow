@@ -1,0 +1,188 @@
+# Конфигурация сканера для автоматического поиска и обработки данных
+
+# Поддерживаемые типы данных
+data_types:
+  - "quotes"          # Котировки лучших цен
+  - "book_top"        # Топ-зона стакана
+  - "tape"            # Лента сделок
+  - "nbbo"            # Лучшие цены по биржам
+  - "basis"           # Базис спот-фьючерс
+  - "features"        # Признаки паттернов
+  - "events"          # События детекторов
+
+# Настройки обработки
+processing:
+  batch_size: 10                    # Количество файлов в пакете
+  max_workers: 4                    # Количество воркеров для параллельной обработки
+  memory_limit_gb: 8                # Лимит памяти в ГБ
+  sequential_mode: false            # Принудительный последовательный режим
+  chunk_size: 10000                 # Размер чанка для обработки больших файлов
+
+# Фильтры для сканирования
+filters:
+  # Фильтр по датам (формат YYYYMMDD)
+  date_range:
+    start: null                     # Начальная дата (null = без ограничений)
+    end: null                       # Конечная дата (null = без ограничений)
+    # start: "20241201"             # Пример: с 1 декабря 2024
+    # end: "20241231"               # Пример: до 31 декабря 2024
+  
+  # Фильтр по биржам
+  exchanges: []                     # Список бирж для обработки (пустой = все)
+  # exchanges: ["binance", "bybit", "okx"]  # Пример: только эти биржи
+  
+  # Фильтр по символам
+  symbols: []                       # Список символов для обработки (пустой = все)
+  # symbols: ["ETHUSDT", "BTCUSDT"]         # Пример: только эти символы
+
+# Настройки сканирования
+scanning:
+  use_file_index: true              # Использовать file_index.json для быстрого поиска
+  recursive_search: true            # Рекурсивный поиск в поддиректориях
+  follow_symlinks: false            # Следовать символическим ссылкам
+  case_sensitive: false             # Регистрозависимый поиск
+  
+  # Маски файлов для поиска
+  file_patterns:
+    - "*.parquet"                   # Основной формат
+    - "*.pq"                        # Альтернативный формат parquet
+  
+  # Исключения
+  exclude_patterns:
+    - "*temp*"                      # Временные файлы
+    - "*backup*"                    # Резервные копии
+    - ".*"                          # Скрытые файлы
+    - "*corrupted*"                 # Поврежденные файлы
+
+# Настройки валидации данных
+validation:
+  check_file_integrity: true       # Проверять целостность parquet файлов
+  check_required_columns: true     # Проверять обязательные колонки
+  check_data_types: true           # Проверять типы данных
+  min_records_per_file: 1          # Минимальное количество записей в файле
+  max_file_size_gb: 5              # Максимальный размер файла в ГБ
+  
+  # Обязательные колонки для каждого типа данных
+  required_columns:
+    quotes: ["ts_ns", "exchange", "symbol", "bid", "ask"]
+    book_top: ["ts_ns", "exchange", "symbol", "side", "price", "size"]
+    tape: ["ts_ns", "exchange", "symbol", "aggression_side"]
+    nbbo: ["ts_ns", "best_bid", "best_ask"]
+    basis: ["ts_ns", "spot_symbol", "futures_symbol", "basis_abs"]
+    features: ["ts_ns", "exchange", "symbol"]
+    events: ["ts_ns", "exchange", "symbol", "pattern_type"]
+
+# Настройки вывода
+output:
+  base_dir: "data/events"           # Базовая директория для результатов
+  create_batch_dirs: true          # Создавать директории для каждого пакета
+  save_intermediate_results: true  # Сохранять промежуточные результаты
+  save_final_summary: true         # Сохранять финальную сводку
+  
+  # Форматы вывода
+  formats:
+    events: "parquet"               # Формат для событий
+    reports: "json"                 # Формат для отчетов
+    logs: "txt"                     # Формат для логов
+  
+  # Компрессия
+  compression:
+    type: "snappy"                  # Тип сжатия для parquet
+    level: null                     # Уровень сжатия
+
+# Настройки отчетности
+reporting:
+  create_scan_report: true          # Создавать отчет о сканировании
+  create_detector_summary: true    # Создавать сводку по детекторам
+  create_performance_report: true  # Создавать отчет о производительности
+  create_error_log: true           # Создавать лог ошибок
+  
+  # Детализация отчетов
+  include_file_details: true       # Включать детали по файлам
+  include_timing_info: true        # Включать информацию о времени
+  include_memory_usage: false      # Включать информацию о памяти
+  include_detector_configs: true   # Включать конфигурации детекторов
+
+# Настройки производительности
+performance:
+  prefetch_files: true             # Предварительная загрузка файлов
+  cache_file_metadata: true        # Кешировать метаданные файлов
+  optimize_memory_usage: true      # Оптимизировать использование памяти
+  cleanup_temp_data: true          # Очищать временные данные
+  
+  # Лимиты ресурсов
+  max_open_files: 100              # Максимальное количество открытых файлов
+  max_memory_per_batch_gb: 2       # Максимальная память на пакет
+  batch_timeout_minutes: 30        # Таймаут обработки пакета
+
+# Настройки логирования
+logging:
+  level: "INFO"                     # Уровень логирования (DEBUG, INFO, WARNING, ERROR)
+  progress_interval: 5              # Интервал логирования прогресса (файлы/пакеты)
+  detailed_progress: true           # Детализированный прогресс
+  log_file_operations: false       # Логировать операции с файлами
+  log_memory_usage: false          # Логировать использование памяти
+  log_timing_details: true         # Логировать детали времени выполнения
+
+# Настройки обработки ошибок
+error_handling:
+  continue_on_file_error: true      # Продолжать при ошибке в файле
+  continue_on_batch_error: true     # Продолжать при ошибке в пакете
+  continue_on_detector_error: true  # Продолжать при ошибке детектора
+  max_consecutive_errors: 5         # Максимальное количество подряд идущих ошибок
+  
+  # Стратегии восстановления
+  retry_failed_files: false        # Повторять неудачные файлы
+  retry_count: 1                    # Количество попыток
+  retry_delay_seconds: 5            # Задержка между попытками
+
+# Интеграция с детекторами
+detector_integration:
+  auto_load_detectors: true         # Автоматически загружать детекторы
+  detector_config_file: "configs/detectors.yaml"  # Файл конфигурации детекторов
+  run_detectors_parallel: false    # Запускать детекторы параллельно
+  detector_timeout_minutes: 10     # Таймаут для детекторов
+  
+  # Настройки запуска детекторов
+  detector_settings:
+    use_progress_logging: true      # Использовать прогресс-логирование
+    validate_input_data: true       # Валидировать входные данные
+    save_detector_outputs: true     # Сохранять выходы детекторов
+    combine_detector_results: true  # Объединять результаты детекторов
+
+# Настройки мониторинга
+monitoring:
+  track_processing_time: true       # Отслеживать время обработки
+  track_memory_usage: false         # Отслеживать использование памяти
+  track_file_sizes: true            # Отслеживать размеры файлов
+  track_detector_performance: true  # Отслеживать производительность детекторов
+  
+  # Пороги для предупреждений
+  thresholds:
+    slow_file_processing_seconds: 30      # Медленная обработка файла
+    high_memory_usage_percent: 80         # Высокое использование памяти
+    large_file_size_mb: 500              # Большой размер файла
+    slow_detector_seconds: 60             # Медленный детектор
+
+# Настройки режимов работы
+modes:
+  # Режим разработки
+  development:
+    enabled: false                  # Включить режим разработки
+    limit_files_per_type: 10       # Ограничить количество файлов на тип
+    enable_debug_logging: true      # Включить отладочное логирование
+    save_debug_info: true           # Сохранять отладочную информацию
+  
+  # Режим тестирования
+  testing:
+    enabled: false                  # Включить режим тестирования
+    use_synthetic_data: false       # Использовать синтетические данные
+    mock_detector_results: false    # Мокать результаты детекторов
+    dry_run: false                  # Сухой прогон (без сохранения)
+  
+  # Производственный режим
+  production:
+    enabled: true                   # Включить производственный режим
+    strict_validation: true         # Строгая валидация
+    full_error_reporting: true      # Полная отчетность об ошибках
+    optimize_for_speed: true        # Оптимизировать для скорости

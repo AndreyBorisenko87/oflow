@@ -1,0 +1,285 @@
+# Конфигурация бэктеста торговых стратегий
+
+# Настройки стратегии
+strategy:
+  # Название стратегии
+  name: "Scalping Strategy"
+  
+  # Описание стратегии
+  description: "Стратегия на основе детекторов ликвидности"
+  
+  # Правила входа в позицию
+  entry_rules:
+    # Минимальный уровень уверенности для входа
+    min_confidence: 0.7
+    
+    # Типы паттернов для входа
+    allowed_patterns:
+      - "liquidity_vacuum_break"
+      - "iceberg_fade"
+      - "stop_run_continuation"
+      - "momentum_ignition"
+    
+    # Минимальное соотношение объема
+    min_volume_ratio: 2.0
+    
+    # Фильтр по биржам
+    allowed_exchanges:
+      - "binance"
+      - "bybit"
+      - "okx"
+    
+    # Фильтр по символам
+    allowed_symbols:
+      - "ETHUSDT"
+      - "BTCUSDT"
+  
+  # Правила выхода из позиции
+  exit_rules:
+    # Выход по времени (в секундах)
+    max_hold_time: 300
+    
+    # Выход по паттерну (если появился противоположный сигнал)
+    exit_on_opposite_pattern: true
+    
+    # Выход по изменению тренда
+    exit_on_trend_change: true
+
+# Управление рисками
+risk_management:
+  # Stop Loss в процентах
+  stop_loss_pct: 2.0
+  
+  # Take Profit в процентах
+  take_profit_pct: 4.0
+  
+  # Максимальная просадка в процентах
+  max_drawdown_pct: 10.0
+  
+  # Максимальное количество открытых позиций
+  max_open_positions: 3
+  
+  # Максимальный размер позиции в процентах от капитала
+  max_position_size_pct: 5.0
+  
+  # Дневной лимит убытков
+  daily_loss_limit_pct: 5.0
+  
+  # Недельный лимит убытков
+  weekly_loss_limit_pct: 15.0
+
+# Размер позиции
+position_sizing:
+  # Максимальный размер позиции
+  max_size: 1.0
+  
+  # Метод расчета размера позиции
+  sizing_method: "fixed"  # fixed, kelly, volatility
+  
+  # Базовый размер позиции
+  base_size: 0.5
+  
+  # Множитель для высокоуверенных сигналов
+  high_confidence_multiplier: 1.5
+  
+  # Множитель для низкоуверенных сигналов
+  low_confidence_multiplier: 0.5
+  
+  # Динамическое изменение размера
+  dynamic_sizing: true
+  
+  # Учет волатильности при расчете размера
+  volatility_adjustment: true
+
+# Настройки исполнения
+execution:
+  # Задержка исполнения (в миллисекундах)
+  execution_delay_ms: 100
+  
+  # Комиссии (в процентах)
+  commission_pct: 0.1
+  
+  # Проскальзывание (в тиках)
+  slippage_ticks: 1
+  
+  # Тип исполнения
+  execution_type: "market"  # market, limit
+  
+  # Размер лимитного ордера (в процентах от спреда)
+  limit_order_spread_pct: 50
+
+# Настройки анализа
+analysis:
+  # Временные окна для анализа
+  time_windows:
+    - 60      # 1 минута
+    - 300     # 5 минут
+    - 900     # 15 минут
+    - 3600    # 1 час
+  
+  # Метрики для анализа
+  metrics:
+    - "sharpe_ratio"
+    - "sortino_ratio"
+    - "calmar_ratio"
+    - "profit_factor"
+    - "win_rate"
+    - "max_drawdown"
+    - "avg_trade"
+    - "avg_win"
+    - "avg_loss"
+  
+  # Бенчмарк для сравнения
+  benchmark: "buy_and_hold"
+  
+  # Валютная пара для бенчмарка
+  benchmark_symbol: "ETHUSDT"
+
+# Настройки отчетности
+reporting:
+  # Включить детальную отчетность
+  detailed_reporting: true
+  
+  # Создавать графики
+  generate_charts: false
+  
+  # Сохранять промежуточные результаты
+  save_intermediate: true
+  
+  # Форматы экспорта
+  export_formats:
+    - "parquet"
+    - "csv"
+    - "json"
+  
+  # Структура выходных файлов
+  output_structure:
+    trades: "backtest_trades.parquet"
+    metrics: "backtest_metrics.json"
+    summary: "backtest_summary.txt"
+    charts: "backtest_charts/"
+
+# Настройки производительности
+performance:
+  # Размер чанка для обработки
+  chunk_size: 10000
+  
+  # Использовать параллельную обработку
+  use_parallel: false
+  
+  # Количество воркеров
+  max_workers: 4
+  
+  # Оптимизировать использование памяти
+  optimize_memory: true
+  
+  # Кешировать промежуточные результаты
+  cache_intermediate: true
+
+# Настройки логирования
+logging:
+  # Уровень логирования
+  level: "INFO"
+  
+  # Логировать детали сделок
+  log_trade_details: true
+  
+  # Логировать метрики
+  log_metrics: true
+  
+  # Логировать производительность
+  log_performance: false
+  
+  # Логировать ошибки исполнения
+  log_execution_errors: true
+
+# Настройки валидации
+validation:
+  # Включить валидацию данных
+  enabled: true
+  
+  # Проверка качества событий
+  check_event_quality: true
+  
+  # Проверка качества котировок
+  check_quote_quality: true
+  
+  # Минимальное качество данных (0.0 - 1.0)
+  min_data_quality: 0.8
+  
+  # Проверка логичности сделок
+  check_trade_logic: true
+
+# Настройки для разных детекторов
+detectors:
+  D1LiquidityVacuumBreak:
+    # Специфичные настройки для D1
+    entry_confidence: 0.8
+    position_size: 1.0
+    stop_loss: 1.5
+    take_profit: 3.0
+    
+  D2AbsorptionFlip:
+    entry_confidence: 0.75
+    position_size: 0.8
+    stop_loss: 2.0
+    take_profit: 4.0
+    
+  D3IcebergFade:
+    entry_confidence: 0.8
+    position_size: 0.9
+    stop_loss: 1.8
+    take_profit: 3.5
+    
+  D4StopRunContinuation:
+    entry_confidence: 0.7
+    position_size: 0.7
+    stop_loss: 2.5
+    take_profit: 5.0
+    
+  D5StopRunFailure:
+    entry_confidence: 0.6
+    position_size: 0.5
+    stop_loss: 3.0
+    take_profit: 6.0
+    
+  D6BookImbalance:
+    entry_confidence: 0.75
+    position_size: 0.8
+    stop_loss: 2.0
+    take_profit: 4.0
+    
+  D7SpoofPullTrap:
+    entry_confidence: 0.7
+    position_size: 0.6
+    stop_loss: 2.5
+    take_profit: 5.0
+    
+  D8MomentumIgnition:
+    entry_confidence: 0.8
+    position_size: 1.0
+    stop_loss: 1.5
+    take_profit: 3.0
+
+# Настройки режимов работы
+modes:
+  # Режим разработки
+  development:
+    enabled: false
+    verbose_logging: true
+    save_debug_info: true
+    max_trades: 100
+    
+  # Режим тестирования
+  testing:
+    enabled: false
+    use_synthetic_data: false
+    strict_validation: true
+    max_trades: 1000
+    
+  # Производственный режим
+  production:
+    enabled: true
+    optimize_for_speed: true
+    strict_validation: false
+    max_trades: 10000

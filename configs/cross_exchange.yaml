@@ -1,0 +1,49 @@
+# Конфигурация кросс-биржевой агрегации
+
+# Настройки синхронизации
+sync:
+  max_lag_ms: 5000              # Максимальный допустимый лаг между биржами
+  min_overlap_ratio: 0.8        # Минимальное перекрытие данных для синхронизации
+  tolerance_ms: 100             # Толерантность синхронизации (мс)
+
+# Временные настройки
+time:
+  tick_size_ms: 10              # Шаг агрегации в миллисекундах
+  min_window_ms: 1000           # Минимальное окно для анализа
+  max_window_ms: 60000          # Максимальное окно для анализа
+
+# Настройки NBBO
+nbbo:
+  min_spread_pct: 0.001         # Минимальный спред в процентах
+  max_spread_pct: 10.0          # Максимальный спред в процентах
+  min_bid_size: 0.1             # Минимальный размер bid
+  min_ask_size: 0.1             # Минимальный размер ask
+  validate_crosses: true        # Валидация пересечений bid/ask
+
+# Настройки объемов
+volumes:
+  min_volume_threshold: 0.1     # Минимальный порог объема
+  large_trade_multiplier: 2.0   # Множитель для крупных сделок
+  volume_consensus_threshold: 0.7 # Порог консенсуса объемов
+  liquidity_score_window: 20    # Окно для скоринга ликвидности
+
+# Настройки агрегации
+aggregation:
+  group_by_symbol: true          # Группировка по символам
+  group_by_exchange: true        # Группировка по биржам
+  group_by_time: true            # Группировка по времени
+  calculate_metrics: true        # Вычисление дополнительных метрик
+
+# Настройки экспорта
+export:
+  save_raw_data: true            # Сохранять сырые данные
+  save_aggregated: true          # Сохранять агрегированные данные
+  save_summaries: true           # Сохранять сводки
+  compression: "snappy"          # Сжатие данных
+  batch_size: 10000              # Размер пакета для обработки
+
+# Настройки логирования
+logging:
+  progress_interval: 1000        # Интервал логирования прогресса
+  debug_level: false             # Включить детальное логирование
+  save_logs: true                # Сохранять логи в файл

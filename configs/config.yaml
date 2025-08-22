@@ -1,0 +1,115 @@
+# Основная конфигурация проекта Scalping Strategy
+
+# Настройки символов и инструментов
+symbols:
+  primary: "ETHUSDT"
+  spot: ["ETHUSDT"]
+  futures: ["ETHUSDT-PERP", "ETHUSDT-SWAP"]
+  additional: ["BTCUSDT", "SOLUSDT"] # Дополнительные символы для анализа
+  
+# Настройки бирж
+exchanges:
+  - "binance"
+  - "bybit" 
+  - "okx"
+  # - "kraken" # Потенциально добавить в будущем
+  # - "coinbase" # Потенциально добавить в будущем
+  
+# Настройки рынков
+markets:
+  - "spot"
+  - "futures"
+  # - "options" # Потенциально добавить в будущем
+
+# Временные настройки
+time:
+  timezone: "UTC"
+  tick_size_ms: 10  # шаг агрегации в миллисекундах
+  sync_window_ms: 1000  # окно синхронизации между биржами
+  data_retention_days: 30 # хранение данных в днях
+  batch_processing_hours: 1 # размер пакета обработки в часах
+  
+# Настройки книги заявок
+orderbook:
+  top_levels: 10  # количество уровней для анализа
+  tick_width: 0.01  # ширина тика в USD для ETH
+  depth_threshold: 1000  # минимальная глубина для анализа (USD)
+  max_levels: 100 # максимальное количество уровней для хранения
+  update_frequency_ms: 100 # частота обновления в миллисекундах
+  
+# Настройки окон анализа
+windows:
+  short: 1000  # короткое окно (1 секунда)
+  medium: 10000  # среднее окно (10 секунд)
+  long: 60000  # длинное окно (1 минута)
+  ultra_short: 100 # ультра-короткое окно (100 мс)
+  ultra_long: 300000 # ультра-длинное окно (5 минут)
+  
+# Настройки синхронизации
+sync:
+  max_lag_ms: 5000  # максимальный допустимый лаг между биржами
+  min_overlap_ratio: 0.8  # минимальное перекрытие данных для синхронизации
+  correlation_threshold: 0.7 # минимальная корреляция для валидной синхронизации
+  reference_exchange: "binance" # биржа-эталон для синхронизации
+  
+# Настройки паттернов
+patterns:
+  lvb:
+    min_vacuum_size: 10000  # минимальный размер вакуума (USD)
+    min_refill_ratio: 0.3  # минимальное соотношение refill/vacuum
+    max_time_window_ms: 30000  # максимальное окно времени для паттерна
+    confidence_threshold: 0.8 # минимальный порог уверенности
+    volume_multiplier: 2.0 # множитель объема для валидации
+    
+# Настройки детекторов
+detectors:
+  enabled: ["D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8"] # Включенные детекторы
+  confidence_threshold: 0.7 # Общий порог уверенности
+  volume_threshold: 1000 # Минимальный объем для анализа
+  time_window_ms: 5000 # Временное окно анализа
+  
+# Настройки экспорта
+export:
+  batch_size_days: 1  # размер пакета в днях
+  output_format: "parquet"  # формат выходных файлов
+  compression: "snappy"  # сжатие данных
+  include_metadata: true # включать метаданные
+  backup_enabled: true # включить резервное копирование
+  
+# Настройки производительности
+performance:
+  max_workers: 4 # максимальное количество рабочих потоков
+  batch_size: 10000 # размер пакета для обработки
+  memory_limit_gb: 8 # лимит памяти в ГБ
+  cache_enabled: true # включить кэширование
+  parallel_processing: true # включить параллельную обработку
+  
+# Настройки логирования
+logging:
+  level: "INFO"
+  file: "logs/oflow.log"
+  max_size_mb: 100
+  backup_count: 5
+  console_output: true # вывод в консоль
+  progress_logging: true # логирование прогресса
+  
+# Настройки мониторинга
+monitoring:
+  enabled: true # включить мониторинг
+  metrics_interval_seconds: 60 # интервал сбора метрик
+  alerting_enabled: false # включить алерты
+  health_check_interval_seconds: 300 # интервал проверки здоровья
+  
+# Настройки безопасности
+security:
+  api_key_encryption: true # шифрование API ключей
+  data_encryption: false # шифрование данных (пока отключено)
+  access_logging: true # логирование доступа
+  rate_limiting: true # ограничение скорости запросов
+  
+# Настройки разработки
+development:
+  debug_mode: false # режим отладки
+  test_data_enabled: true # включить тестовые данные
+  mock_exchanges: false # использовать мок-биржи
+  development_logging: false # детальное логирование для разработки

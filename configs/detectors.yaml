@@ -1,0 +1,56 @@
+# Конфигурация детекторов паттернов
+
+# D1 — Вакуум ликвидности
+D1_LiquidityVacuumBreak:
+  empty_levels: 3
+  min_jump_ticks: 5
+  time_window_ms: 1000
+  min_volume_ratio: 2.0
+
+# D2 — Перелом на поглощении
+D2_AbsorptionFlip:
+  min_side_ratio: 0.7
+  max_price_move_ticks: 2
+  min_total_volume: 100
+  persistent_order_threshold: 50
+
+# D3 — Тающий айсберг
+D3_IcebergFade:
+  same_price_trades: 10
+  time_window_ms: 2000
+  min_total_volume: 200
+  refresh_detect: true
+
+# D4 — Продолжение после выноса стопов
+D4_StopRunContinuation:
+  min_price_move_percent: 0.3
+  time_window_ms: 2000
+  no_pullback_window_ms: 5000
+  min_volume_ratio: 3.0
+
+# D5 — Ложный вынос стопов
+D5_StopRunFailure:
+  break_extreme_confirm_ticks: 2
+  reversal_window_ms: 5000
+  reversal_threshold_ratio: 0.7
+  opposite_large_trade: true
+
+# D6 — Сильный перекос стакана
+D6_BookImbalance:
+  bid_ask_ratio: 3.0
+  level_wall_multiplier: 5.0
+  levels_depth: 5
+
+# D7 — Спуфинг ловушка
+D7_SpoofPullTrap:
+  large_order_multiplier: 5.0
+  distance_ticks: 2
+  cancel_time_window_ms: 1000
+  no_trade_executed: true
+
+# D8 — Разгон на импульсе
+D8_MomentumIgnition:
+  acceleration_window_ms: 3000
+  min_volume_ratio: 3.0
+  one_side_ratio: 0.8
+  candle_body_ratio: 0.7

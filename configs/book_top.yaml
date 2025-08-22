@@ -1,0 +1,229 @@
+# Конфигурация анализа топ-зоны order book
+
+# Основные настройки order book
+order_book:
+  # Количество топ-уровней для анализа
+  top_levels: 10
+  
+  # Ширина тика в единицах цены
+  tick_width: 0.01
+  
+  # Минимальный порог глубины для учета изменений
+  depth_threshold: 0.0
+  
+  # Временное окно для агрегации (в миллисекундах)
+  time_window_ms: 10
+  
+  # Максимальное расстояние цены для сопоставления уровней
+  price_tolerance: 0.001
+
+# Настройки анализа уровней
+level_analysis:
+  # Включить анализ накопительной глубины
+  cumulative_depth: true
+  
+  # Включить анализ ценовых тиков
+  price_tick_analysis: true
+  
+  # Минимальный размер для активного уровня
+  min_active_size: 0.01
+  
+  # Максимальное количество уровней для детального анализа
+  max_detailed_levels: 5
+
+# Настройки отслеживания изменений
+change_tracking:
+  # Включить отслеживание изменений
+  enabled: true
+  
+  # Типы изменений для отслеживания
+  track_types:
+    - "add"      # Добавление нового уровня
+    - "delete"   # Удаление уровня
+    - "modify"   # Изменение размера
+    - "refresh"  # Обновление уровня
+  
+  # Минимальное изменение для учета
+  min_change_threshold: 0.01
+  
+  # Временное окно для анализа изменений (в миллисекундах)
+  change_window_ms: 50
+
+# Настройки метрик
+metrics:
+  # Включить вычисление метрик
+  enabled: true
+  
+  # Метрики глубины
+  depth_metrics:
+    - "total_depth"
+    - "average_depth"
+    - "depth_imbalance"
+    - "depth_concentration"
+  
+  # Метрики изменений
+  change_metrics:
+    - "change_frequency"
+    - "change_volume"
+    - "change_intensity"
+    - "change_patterns"
+  
+  # Метрики ликвидности
+  liquidity_metrics:
+    - "bid_ask_ratio"
+    - "liquidity_score"
+    - "market_impact"
+    - "resilience"
+
+# Настройки агрегации
+aggregation:
+  # Временные окна для агрегации
+  time_windows:
+    - 1000    # 1 секунда
+    - 5000    # 5 секунд
+    - 10000   # 10 секунд
+    - 60000   # 1 минута
+  
+  # Методы агрегации
+  methods:
+    - "mean"      # Среднее значение
+    - "median"    # Медиана
+    - "sum"       # Сумма
+    - "count"     # Количество
+    - "std"       # Стандартное отклонение
+
+# Настройки фильтрации
+filtering:
+  # Включить фильтрацию данных
+  enabled: true
+  
+  # Фильтр по размеру
+  size_filter:
+    min_size: 0.0
+    max_size: 1000000.0
+  
+  # Фильтр по цене
+  price_filter:
+    min_price: 0.0
+    max_price: 100000.0
+  
+  # Фильтр по времени
+  time_filter:
+    min_timestamp: null
+    max_timestamp: null
+
+# Настройки валидации
+validation:
+  # Включить валидацию данных
+  enabled: true
+  
+  # Проверка логичности bid/ask
+  check_bid_ask_logic: true
+  
+  # Проверка монотонности цен
+  check_price_monotonicity: true
+  
+  # Проверка временных меток
+  check_timestamps: true
+  
+  # Минимальное качество данных (0.0 - 1.0)
+  min_data_quality: 0.8
+
+# Настройки экспорта
+export:
+  # Формат экспорта
+  format: "parquet"
+  
+  # Сжатие
+  compression: "snappy"
+  
+  # Включить сохранение промежуточных результатов
+  save_intermediate: true
+  
+  # Включить сохранение метрик
+  save_metrics: true
+  
+  # Структура выходных файлов
+  output_structure:
+    book_levels: "book_levels.parquet"
+    book_changes: "book_changes.parquet"
+    book_metrics: "book_metrics.parquet"
+
+# Настройки производительности
+performance:
+  # Размер чанка для обработки
+  chunk_size: 10000
+  
+  # Использовать параллельную обработку
+  use_parallel: false
+  
+  # Количество воркеров
+  max_workers: 4
+  
+  # Оптимизировать использование памяти
+  optimize_memory: true
+
+# Настройки логирования
+logging:
+  # Уровень логирования
+  level: "INFO"
+  
+  # Логировать детали анализа
+  log_analysis_details: true
+  
+  # Логировать статистику по уровням
+  log_level_stats: true
+  
+  # Логировать метрики производительности
+  log_performance: false
+
+# Настройки для разных бирж
+exchanges:
+  binance:
+    # Специфичные настройки для Binance
+    tick_width: 0.01
+    min_active_size: 0.001
+    
+  bybit:
+    tick_width: 0.01
+    min_active_size: 0.001
+    
+  okx:
+    tick_width: 0.01
+    min_active_size: 0.001
+
+# Настройки для разных символов
+symbols:
+  ETHUSDT:
+    # Специфичные настройки для ETHUSDT
+    top_levels: 15
+    tick_width: 0.01
+    
+  BTCUSDT:
+    top_levels: 20
+    tick_width: 0.1
+    
+  default:
+    # Настройки по умолчанию
+    top_levels: 10
+    tick_width: 0.01
+
+# Настройки режимов работы
+modes:
+  # Режим разработки
+  development:
+    enabled: false
+    verbose_logging: true
+    save_debug_info: true
+    
+  # Режим тестирования
+  testing:
+    enabled: false
+    use_synthetic_data: false
+    strict_validation: true
+    
+  # Производственный режим
+  production:
+    enabled: true
+    optimize_for_speed: true
+    strict_validation: false

@@ -1,0 +1,6 @@
+2025-08-21 16:24:48,761 - INFO: trades_coverage: 1.000
+2025-08-21 16:24:48,762 - INFO: trades_distribution: 0.827
+2025-08-21 16:24:48,762 - INFO: depth_coverage: 1.000
+2025-08-21 16:24:48,762 - INFO: time_alignment: 0.905
+2025-08-21 16:24:48,763 - INFO: data_integrity: 0.064
+2025-08-21 16:24:48,763 - INFO: overall_quality: 0.759
