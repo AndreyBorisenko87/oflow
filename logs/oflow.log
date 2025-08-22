@@ -1,0 +1,409 @@
+2025-08-22 15:27:12,778 - oflow.pipeline - INFO - === БЛОК 02: ИМПОРТ СЫРЬЯ ===
+2025-08-22 15:27:12,779 - oflow.pipeline - INFO - Найдено 12 путей к данным
+2025-08-22 15:27:12,779 - oflow.pipeline - ERROR - ❌ Ошибка в цепочке обработки: import_raw_data() takes 1 positional argument but 2 were given
+2025-08-22 15:27:34,964 - oflow.pipeline - INFO - === БЛОК 02: ИМПОРТ СЫРЬЯ ===
+2025-08-22 15:27:34,965 - oflow.pipeline - INFO - Найдено 12 путей к данным
+2025-08-22 15:27:34,976 - oflow.blocks.base_block.ImportRawBlock - INFO - === Начало выполнения ImportRawBlock ===
+2025-08-22 15:27:34,977 - oflow.blocks.base_block.ImportRawBlock - INFO - Этап 1/3: Валидация данных...
+2025-08-22 15:27:34,978 - oflow.blocks.base_block.ImportRawBlock - INFO - Базовая валидация данных пройдена
+2025-08-22 15:27:35,107 - oflow.blocks.base_block.ImportRawBlock - INFO - Найдено 7181 файлов для обработки
+2025-08-22 15:27:35,108 - oflow.blocks.base_block.ImportRawBlock - INFO - Этап 2/3: Обработка данных...
+2025-08-22 15:27:35,109 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработка данных по 12 путям
+2025-08-22 15:27:35,110 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработка trades...
+2025-08-22 15:27:35,137 - oflow.blocks.base_block.ImportRawBlock - WARNING - Trades файлы пустые
+2025-08-22 15:27:35,138 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработка depth...
+2025-08-22 15:27:35,145 - oflow.blocks.base_block.ImportRawBlock - WARNING - Depth файлы пустые
+2025-08-22 15:27:35,146 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработка quotes...
+2025-08-22 15:27:35,146 - oflow.blocks.base_block.ImportRawBlock - WARNING - Quotes файлы не найдены
+2025-08-22 15:27:35,147 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработка данных завершена успешно
+2025-08-22 15:27:35,151 - oflow.blocks.base_block.ImportRawBlock - INFO - Этап 3/3: Завершено за 0.18с
+2025-08-22 15:27:35,152 - oflow.blocks.base_block.ImportRawBlock - INFO - 📊 Результат: Словарь с ключами: []
+2025-08-22 15:27:35,153 - oflow.blocks.base_block.ImportRawBlock - INFO - === Блок ImportRawBlock завершен ===
+2025-08-22 15:27:35,153 - oflow.pipeline - ERROR - ❌ Ошибка в цепочке обработки: not enough values to unpack (expected 2, got 0)
+2025-08-22 15:28:28,279 - oflow.pipeline - INFO - === БЛОК 02: ИМПОРТ СЫРЬЯ ===
+2025-08-22 15:28:28,280 - oflow.pipeline - INFO - Найдено 12 путей к данным
+2025-08-22 15:28:28,280 - oflow.blocks.base_block.ImportRawBlock - INFO - === Начало выполнения ImportRawBlock ===
+2025-08-22 15:28:28,281 - oflow.blocks.base_block.ImportRawBlock - INFO - Этап 1/3: Валидация данных...
+2025-08-22 15:28:28,281 - oflow.blocks.base_block.ImportRawBlock - INFO - Базовая валидация данных пройдена
+2025-08-22 15:28:28,410 - oflow.blocks.base_block.ImportRawBlock - INFO - Найдено 7183 файлов для обработки
+2025-08-22 15:28:28,412 - oflow.blocks.base_block.ImportRawBlock - INFO - Этап 2/3: Обработка данных...
+2025-08-22 15:28:28,412 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработка данных по 12 путям
+2025-08-22 15:28:28,412 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработка trades...
+2025-08-22 15:31:47,601 - oflow.pipeline - INFO - === БЛОК 02: ИМПОРТ СЫРЬЯ ===
+2025-08-22 15:31:47,603 - oflow.pipeline - INFO - Найдено 12 путей к данным
+2025-08-22 15:31:47,604 - oflow.blocks.base_block.ImportRawBlock - INFO - === Начало выполнения ImportRawBlock ===
+2025-08-22 15:31:47,604 - oflow.blocks.base_block.ImportRawBlock - INFO - Этап 1/3: Валидация данных...
+2025-08-22 15:31:47,605 - oflow.blocks.base_block.ImportRawBlock - INFO - Базовая валидация данных пройдена
+2025-08-22 15:31:47,721 - oflow.blocks.base_block.ImportRawBlock - INFO - Найдено 7189 файлов для обработки
+2025-08-22 15:31:47,723 - oflow.blocks.base_block.ImportRawBlock - INFO - Этап 2/3: Обработка данных...
+2025-08-22 15:31:47,724 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработка данных по 12 путям
+2025-08-22 15:31:47,725 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработка trades...
+2025-08-22 15:35:17,146 - oflow.pipeline - INFO - === БЛОК 02: ИМПОРТ СЫРЬЯ ===
+2025-08-22 15:35:17,147 - oflow.pipeline - INFO - Найдено 12 путей к данным
+2025-08-22 15:35:17,147 - oflow.blocks.base_block.ImportRawBlock - INFO - === Начало выполнения ImportRawBlock ===
+2025-08-22 15:35:17,148 - oflow.blocks.base_block.ImportRawBlock - INFO - Этап 1/3: Валидация данных...
+2025-08-22 15:35:17,149 - oflow.blocks.base_block.ImportRawBlock - INFO - Базовая валидация данных пройдена
+2025-08-22 15:35:17,263 - oflow.blocks.base_block.ImportRawBlock - INFO - Найдено 7189 файлов для обработки
+2025-08-22 15:35:17,264 - oflow.blocks.base_block.ImportRawBlock - INFO - Этап 2/3: Обработка данных...
+2025-08-22 15:35:17,264 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработка данных по 12 путям
+2025-08-22 15:35:17,265 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработка trades...
+2025-08-22 15:39:47,323 - oflow.pipeline - INFO - === БЛОК 02: ИМПОРТ СЫРЬЯ ===
+2025-08-22 15:39:47,324 - oflow.pipeline - INFO - Найдено 12 путей к данным
+2025-08-22 15:39:47,324 - oflow.blocks.base_block.ImportRawBlock - INFO - === Начало выполнения ImportRawBlock ===
+2025-08-22 15:39:47,325 - oflow.blocks.base_block.ImportRawBlock - INFO - Этап 1/3: Валидация данных...
+2025-08-22 15:39:47,325 - oflow.blocks.base_block.ImportRawBlock - INFO - Базовая валидация данных пройдена
+2025-08-22 15:39:47,327 - oflow.blocks.base_block.ImportRawBlock - ERROR - Не найдено файлов по указанным путям: ['C:\\Users\\andrei.barysenka\\Documents\\Trading\\CryptoFeed\\data\\spot\\binance\\2025-08-22-15-trades.parquet', 'C:\\Users\\andrei.barysenka\\Documents\\Trading\\CryptoFeed\\data\\spot\\binance\\2025-08-22-15-depth.parquet', 'C:\\Users\\andrei.barysenka\\Documents\\Trading\\CryptoFeed\\data\\spot\\bybit\\2025-08-22-15-trades.parquet', 'C:\\Users\\andrei.barysenka\\Documents\\Trading\\CryptoFeed\\data\\spot\\bybit\\2025-08-22-15-depth.parquet', 'C:\\Users\\andrei.barysenka\\Documents\\Trading\\CryptoFeed\\data\\spot\\okx\\2025-08-22-15-trades.parquet', 'C:\\Users\\andrei.barysenka\\Documents\\Trading\\CryptoFeed\\data\\spot\\okx\\2025-08-22-15-depth.parquet', 'C:\\Users\\andrei.barysenka\\Documents\\Trading\\CryptoFeed\\data\\futures\\binance_futures\\2025-08-22-15-trades.parquet', 'C:\\Users\\andrei.barysenka\\Documents\\Trading\\CryptoFeed\\data\\futures\\binance_futures\\2025-08-22-15-depth.parquet', 'C:\\Users\\andrei.barysenka\\Documents\\Trading\\CryptoFeed\\data\\futures\\bybit\\2025-08-22-15-trades.parquet', 'C:\\Users\\andrei.barysenka\\Documents\\Trading\\CryptoFeed\\data\\futures\\bybit\\2025-08-22-15-depth.parquet', 'C:\\Users\\andrei.barysenka\\Documents\\Trading\\CryptoFeed\\data\\futures\\okx\\2025-08-22-15-trades.parquet', 'C:\\Users\\andrei.barysenka\\Documents\\Trading\\CryptoFeed\\data\\futures\\okx\\2025-08-22-15-depth.parquet']
+2025-08-22 15:39:47,329 - oflow.blocks.base_block.ImportRawBlock - ERROR - Данные не прошли валидацию
+2025-08-22 15:39:47,329 - oflow.pipeline - ERROR - ❌ Ошибка в цепочке обработки: cannot unpack non-iterable NoneType object
+2025-08-22 15:42:59,444 - oflow.pipeline - INFO - === БЛОК 02: ИМПОРТ СЫРЬЯ ===
+2025-08-22 15:42:59,446 - oflow.pipeline - INFO - Найдено 12 путей к данным
+2025-08-22 15:42:59,447 - oflow.blocks.base_block.ImportRawBlock - INFO - === Начало выполнения ImportRawBlock ===
+2025-08-22 15:42:59,447 - oflow.blocks.base_block.ImportRawBlock - INFO - Этап 1/3: Валидация данных...
+2025-08-22 15:42:59,448 - oflow.blocks.base_block.ImportRawBlock - INFO - Базовая валидация данных пройдена
+2025-08-22 15:42:59,450 - oflow.blocks.base_block.ImportRawBlock - INFO - Найдено 12 файлов для обработки
+2025-08-22 15:42:59,451 - oflow.blocks.base_block.ImportRawBlock - INFO - Этап 2/3: Обработка данных...
+2025-08-22 15:42:59,451 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработка данных по 12 путям
+2025-08-22 15:42:59,452 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработка trades...
+2025-08-22 15:43:01,015 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработано 224673 trades
+2025-08-22 15:43:01,019 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработка depth...
+2025-08-22 15:43:16,750 - oflow.blocks.base_block.ImportRawBlock - ERROR - Ошибка при обработке данных: argument of type 'NoneType' is not iterable
+2025-08-22 15:43:16,751 - oflow.pipeline - ERROR - ❌ Ошибка в цепочке обработки: argument of type 'NoneType' is not iterable
+2025-08-22 15:43:44,127 - oflow.pipeline - INFO - === БЛОК 02: ИМПОРТ СЫРЬЯ ===
+2025-08-22 15:43:44,128 - oflow.pipeline - INFO - Найдено 12 путей к данным
+2025-08-22 15:43:44,128 - oflow.blocks.base_block.ImportRawBlock - INFO - === Начало выполнения ImportRawBlock ===
+2025-08-22 15:43:44,129 - oflow.blocks.base_block.ImportRawBlock - INFO - Этап 1/3: Валидация данных...
+2025-08-22 15:43:44,129 - oflow.blocks.base_block.ImportRawBlock - INFO - Базовая валидация данных пройдена
+2025-08-22 15:43:44,130 - oflow.blocks.base_block.ImportRawBlock - INFO - Найдено 12 файлов для обработки
+2025-08-22 15:43:44,131 - oflow.blocks.base_block.ImportRawBlock - INFO - Этап 2/3: Обработка данных...
+2025-08-22 15:43:44,132 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработка данных по 12 путям
+2025-08-22 15:43:44,133 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработка trades...
+2025-08-22 15:43:45,784 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработано 224673 trades
+2025-08-22 15:43:45,785 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработка depth...
+2025-08-22 15:47:07,750 - oflow.pipeline - INFO - === БЛОК 02: ИМПОРТ СЫРЬЯ ===
+2025-08-22 15:47:07,751 - oflow.pipeline - INFO - Найдено 12 путей к данным
+2025-08-22 15:47:07,751 - oflow.blocks.base_block.ImportRawBlock - INFO - === Начало выполнения ImportRawBlock ===
+2025-08-22 15:47:07,752 - oflow.blocks.base_block.ImportRawBlock - INFO - Этап 1/3: Валидация данных...
+2025-08-22 15:47:07,752 - oflow.blocks.base_block.ImportRawBlock - INFO - Базовая валидация данных пройдена
+2025-08-22 15:47:07,753 - oflow.blocks.base_block.ImportRawBlock - INFO - Найдено 12 файлов для обработки
+2025-08-22 15:47:07,754 - oflow.blocks.base_block.ImportRawBlock - INFO - Этап 2/3: Обработка данных...
+2025-08-22 15:47:07,754 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработка данных по 12 путям
+2025-08-22 15:47:07,755 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработка trades...
+2025-08-22 15:47:09,416 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработано 224673 trades
+2025-08-22 15:47:09,416 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработка depth...
+2025-08-22 15:49:43,022 - oflow.pipeline - INFO - === БЛОК 02: ИМПОРТ СЫРЬЯ ===
+2025-08-22 15:49:43,023 - oflow.pipeline - INFO - Найдено 12 путей к данным
+2025-08-22 15:49:43,024 - oflow.blocks.base_block.ImportRawBlock - INFO - === Начало выполнения ImportRawBlock ===
+2025-08-22 15:49:43,025 - oflow.blocks.base_block.ImportRawBlock - INFO - Этап 1/3: Валидация данных...
+2025-08-22 15:49:43,025 - oflow.blocks.base_block.ImportRawBlock - INFO - Базовая валидация данных пройдена
+2025-08-22 15:49:43,027 - oflow.blocks.base_block.ImportRawBlock - INFO - Найдено 12 файлов для обработки
+2025-08-22 15:49:43,028 - oflow.blocks.base_block.ImportRawBlock - INFO - Этап 2/3: Обработка данных...
+2025-08-22 15:49:43,028 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработка данных по 12 путям
+2025-08-22 15:49:43,029 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработка trades...
+2025-08-22 15:49:44,719 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработано 224673 trades
+2025-08-22 15:49:44,720 - oflow.blocks.base_block.ImportRawBlock - INFO - Обработка depth...
+2025-08-22 22:16:04,523 - oflow.pipeline - INFO - Запуск полной цепочки обработки...
+2025-08-22 22:16:36,068 - oflow.pipeline - INFO - Запуск полной цепочки обработки...
+2025-08-22 22:16:36,081 - oflow.pipeline - INFO - === БЛОК 02: ИМПОРТ СЫРЬЯ ===
+2025-08-22 22:16:36,082 - oflow.pipeline - INFO - Найдено 12 путей к данным
+2025-08-22 22:16:36,082 - ImportRawBlock - INFO - 🚀 Запуск блока ImportRawBlock
+2025-08-22 22:16:36,083 - ImportRawBlock - INFO - Обработка данных по 12 путям
+2025-08-22 22:16:36,084 - ImportRawBlock - INFO - Обработка trades...
+2025-08-22 22:16:37,835 - ImportRawBlock - INFO - Обработано 224673 trades
+2025-08-22 22:16:37,846 - ImportRawBlock - INFO - Обработка depth...
+2025-08-22 22:25:31,759 - ImportRawBlock - INFO - Обработано 10958380 depth записей
+2025-08-22 22:25:31,761 - ImportRawBlock - INFO - Обработка quotes...
+2025-08-22 22:25:31,762 - ImportRawBlock - WARNING - Quotes файлы не найдены
+2025-08-22 22:25:31,793 - ImportRawBlock - INFO - Создан tape из trades
+2025-08-22 22:25:31,794 - ImportRawBlock - INFO - 🔍 Путь сохранения: C:\Users\andrei.barysenka\Documents\Trading\CryptoFeed\oflow\data\normalized
+2025-08-22 22:25:31,795 - ImportRawBlock - INFO - 💾 Сохраняю trades в C:\Users\andrei.barysenka\Documents\Trading\CryptoFeed\oflow\data\normalized\trades.parquet
+2025-08-22 22:25:32,283 - ImportRawBlock - INFO - ✅ Сохранен trades в data\normalized\trades.parquet
+2025-08-22 22:25:32,284 - ImportRawBlock - INFO - 💾 Сохраняю book_top в C:\Users\andrei.barysenka\Documents\Trading\CryptoFeed\oflow\data\normalized\book_top.parquet
+2025-08-22 22:25:47,830 - ImportRawBlock - INFO - ✅ Сохранен book_top в data\normalized\book_top.parquet
+2025-08-22 22:25:47,831 - ImportRawBlock - INFO - 💾 Сохраняю tape в C:\Users\andrei.barysenka\Documents\Trading\CryptoFeed\oflow\data\normalized\tape.parquet
+2025-08-22 22:25:48,311 - ImportRawBlock - INFO - ✅ Сохранен tape в data\normalized\tape.parquet
+2025-08-22 22:25:49,759 - ImportRawBlock - INFO - ✅ Блок ImportRawBlock завершен за 553.68 сек
+2025-08-22 22:25:49,760 - oflow.pipeline - INFO - Импорт завершен: 224673 trades, 10958380 depth
+2025-08-22 22:25:49,761 - oflow.pipeline - INFO - === БЛОК 04: СИНХРОНИЗАЦИЯ ВРЕМЕНИ ===
+2025-08-22 22:25:49,762 - oflow.blocks.b04_sync_time - INFO - Запуск синхронизации времени...
+2025-08-22 22:25:49,762 - oflow.blocks.b04_sync_time - INFO - Этап 1/4: Оценка лагов между биржами
+2025-08-22 22:25:49,763 - oflow.blocks.b04_sync_time - INFO - Оценка лагов между биржами...
+2025-08-22 22:25:49,763 - oflow.blocks.b04_sync_time - INFO - Этап 1/4: Анализ данных по биржам
+2025-08-22 22:25:49,780 - oflow.blocks.b04_sync_time - INFO - Найдены биржи: <StringArray>
+['binance_futures_futures',           'bybit_futures',
+            'binance_spot',             'okx_futures',
+                'okx_spot',              'bybit_spot']
+Length: 6, dtype: string
+2025-08-22 22:25:49,780 - oflow.blocks.b04_sync_time - INFO - Референсная биржа: binance
+2025-08-22 22:25:49,781 - oflow.blocks.b04_sync_time - INFO - Максимальный лаг: 10 сек
+2025-08-22 22:25:49,781 - oflow.blocks.b04_sync_time - INFO - Порог корреляции: 0.7
+2025-08-22 22:25:49,782 - oflow.blocks.b04_sync_time - INFO - Этап 2/4: Создание временных рядов цен
+2025-08-22 22:25:49,850 - oflow.blocks.b04_sync_time - INFO - binance_futures_futures: 2367 временных окон
+2025-08-22 22:25:49,902 - oflow.blocks.b04_sync_time - INFO - bybit_futures: 2164 временных окон
+2025-08-22 22:25:49,952 - oflow.blocks.b04_sync_time - INFO - binance_spot: 2165 временных окон
+2025-08-22 22:25:50,006 - oflow.blocks.b04_sync_time - INFO - okx_futures: 2226 временных окон
+2025-08-22 22:25:50,037 - oflow.blocks.b04_sync_time - INFO - okx_spot: 1510 временных окон
+2025-08-22 22:25:50,071 - oflow.blocks.b04_sync_time - INFO - bybit_spot: 1755 временных окон
+2025-08-22 22:25:50,071 - oflow.blocks.b04_sync_time - WARNING - Референсная биржа binance_futures_futures не найдена, используем binance_futures_futures
+2025-08-22 22:25:50,072 - oflow.blocks.b04_sync_time - INFO - Этап 3/4: Анализ корреляций между биржами
+2025-08-22 22:25:50,084 - oflow.blocks.b04_sync_time - INFO - bybit_futures: лаг = 0с (0нс), корреляция = 0.999
+2025-08-22 22:25:50,091 - oflow.blocks.b04_sync_time - INFO - binance_spot: лаг = 0с (0нс), корреляция = 0.999
+2025-08-22 22:25:50,099 - oflow.blocks.b04_sync_time - INFO - okx_futures: лаг = 0с (0нс), корреляция = 1.000
+2025-08-22 22:25:50,106 - oflow.blocks.b04_sync_time - INFO - okx_spot: лаг = 0с (0нс), корреляция = 0.999
+2025-08-22 22:25:50,113 - oflow.blocks.b04_sync_time - INFO - bybit_spot: лаг = 0с (0нс), корреляция = 0.999
+2025-08-22 22:25:50,113 - oflow.blocks.b04_sync_time - INFO - Итоговые лаги: {'binance_futures_futures': 0, 'bybit_futures': 0, 'binance_spot': 0, 'okx_futures': 0, 'okx_spot': 0, 'bybit_spot': 0}
+2025-08-22 22:25:50,115 - oflow.blocks.b04_sync_time - INFO - Этап 2/4: Синхронизация временных меток
+2025-08-22 22:25:50,115 - oflow.blocks.b04_sync_time - INFO - Синхронизация таймстемпов...
+2025-08-22 22:25:50,801 - oflow.blocks.b04_sync_time - INFO - Применение лагов к trades данным...
+2025-08-22 22:25:50,894 - oflow.blocks.b04_sync_time - INFO - Trades данные пересортированы по синхронизированному времени
+2025-08-22 22:25:50,895 - oflow.blocks.b04_sync_time - INFO - Применение лагов к depth данным...
+2025-08-22 22:25:53,073 - oflow.blocks.b04_sync_time - INFO - Depth данные пересортированы по синхронизированному времени
+2025-08-22 22:25:53,073 - oflow.blocks.b04_sync_time - INFO - Лаги не обнаружены, синхронизация не требуется
+2025-08-22 22:25:53,074 - oflow.blocks.b04_sync_time - INFO - Этап 3/4: Фильтрация дропов данных
+2025-08-22 22:25:53,074 - oflow.blocks.b04_sync_time - INFO - Фильтрация дропов данных...
+2025-08-22 22:25:54,684 - oflow.blocks.b04_sync_time - INFO - Общий временной диапазон: 2710.2 секунд
+2025-08-22 22:25:55,397 - oflow.blocks.b04_sync_time - INFO - Анализируем покрытие для бирж: {'bybit_futures', 'okx_spot', 'bybit_spot', 'binance_futures_futures', 'okx_futures', 'binance_spot'}
+2025-08-22 22:26:16,451 - oflow.blocks.b04_sync_time - INFO - Найдено 2 периодов с покрытием >= 80.0%
+2025-08-22 22:26:33,893 - oflow.blocks.b04_sync_time - INFO - Удалено 163 depth records (0.0%)
+2025-08-22 22:26:33,894 - oflow.blocks.b04_sync_time - INFO - Итоговое покрытие времени: 89.3%
+2025-08-22 22:27:34,590 - oflow.blocks.b04_sync_time - INFO - Фильтрация дропов завершена
+2025-08-22 22:27:34,740 - oflow.blocks.b04_sync_time - INFO - Этап 4/4: Валидация качества синхронизации
+2025-08-22 22:27:34,741 - oflow.blocks.b04_sync_time - INFO - Проверка качества синхронизации...
+2025-08-22 22:27:35,085 - oflow.blocks.b04_sync_time - INFO - Trades покрытие по биржам: {'binance_futures_futures': np.float64(0.9999050957078575), 'bybit_futures': np.float64(0.9998212696401249), 'binance_spot': np.float64(0.9995472657372492), 'okx_futures': np.float64(0.9994649169369816), 'okx_spot': np.float64(0.9989172784699762), 'bybit_spot': np.float64(0.9986790944361451)}
+2025-08-22 22:27:40,235 - oflow.blocks.b04_sync_time - INFO - Depth покрытие по биржам: {'bybit_spot': np.float64(0.9999837652049041), 'bybit_futures': np.float64(0.9990251799734636), 'okx_spot': np.float64(0.9989853312572595), 'okx_futures': np.float64(0.9989853312572595), 'binance_spot': np.float64(0.9989875450328457), 'binance_futures_futures': np.float64(0.9988572984808748)}
+2025-08-22 22:28:20,225 - oflow.blocks.b04_sync_time - INFO - Анализировано 2405 временных окон
+2025-08-22 22:28:20,225 - oflow.blocks.b04_sync_time - INFO - Средний скор выравнивания: 0.846
+2025-08-22 22:28:20,425 - oflow.blocks.b04_sync_time - WARNING - Найдены дублирующиеся timestamps в binance_futures_futures: 36163
+2025-08-22 22:28:20,457 - oflow.blocks.b04_sync_time - WARNING - Найдены дублирующиеся timestamps в bybit_futures: 37273
+2025-08-22 22:28:20,482 - oflow.blocks.b04_sync_time - WARNING - Найдены дублирующиеся timestamps в binance_spot: 30746
+2025-08-22 22:28:20,512 - oflow.blocks.b04_sync_time - WARNING - Найдены дублирующиеся timestamps в okx_futures: 24413
+2025-08-22 22:28:20,538 - oflow.blocks.b04_sync_time - WARNING - Найдены дублирующиеся timestamps в okx_spot: 5663
+2025-08-22 22:28:20,563 - oflow.blocks.b04_sync_time - WARNING - Найдены дублирующиеся timestamps в bybit_spot: 12264
+2025-08-22 22:28:20,569 - oflow.blocks.b04_sync_time - INFO - === МЕТРИКИ КАЧЕСТВА СИНХРОНИЗАЦИИ ===
+2025-08-22 22:28:20,569 - oflow.blocks.b04_sync_time - INFO - trades_coverage: 0.999
+2025-08-22 22:28:20,570 - oflow.blocks.b04_sync_time - INFO - trades_distribution: 0.944
+2025-08-22 22:28:20,570 - oflow.blocks.b04_sync_time - INFO - depth_coverage: 0.999
+2025-08-22 22:28:20,570 - oflow.blocks.b04_sync_time - INFO - time_alignment: 0.846
+2025-08-22 22:28:20,570 - oflow.blocks.b04_sync_time - INFO - data_integrity: 0.002
+2025-08-22 22:28:20,571 - oflow.blocks.b04_sync_time - INFO - overall_quality: 0.758
+2025-08-22 22:28:20,571 - oflow.blocks.b04_sync_time - INFO - 🟡 Качество синхронизации: ХОРОШЕЕ
+2025-08-22 22:28:20,573 - oflow.blocks.b04_sync_time - INFO - Синхронизация времени завершена
+2025-08-22 22:28:20,878 - oflow.pipeline - INFO - Синхронизация времени завершена
+2025-08-22 22:28:20,878 - oflow.pipeline - INFO - === БЛОК 05: ЛУЧШИЕ ЦЕНЫ ===
+2025-08-22 22:28:20,878 - oflow.blocks.b05_best_prices - INFO - Запуск восстановления лучших цен...
+2025-08-22 22:28:20,879 - oflow.blocks.b05_best_prices - INFO - Этап 1/4: Восстановление quotes из depth данных
+2025-08-22 22:28:20,879 - oflow.blocks.b05_best_prices - INFO - Шаг агрегации: 10ms
+2025-08-22 22:28:20,879 - oflow.blocks.b05_best_prices - INFO - Этап 1/4: Восстановление best bid/ask/mid цен
+2025-08-22 22:28:21,669 - oflow.blocks.b05_best_prices - INFO - Агрегация по тикам 10ms (10000000нс)
+2025-08-22 22:28:22,352 - oflow.blocks.b05_best_prices - INFO - Обработка 6 бирж...
+2025-08-22 22:28:23,018 - oflow.blocks.b05_best_prices - INFO - Биржа 1/6: bybit_spot
+2025-08-22 22:28:23,632 - oflow.blocks.b05_best_prices - INFO -   Временных окон: 12035
+2025-08-22 22:28:27,320 - oflow.blocks.b05_best_prices - INFO -     Обработано 1000/12035 окон (8.3%)
+2025-08-22 22:28:30,974 - oflow.blocks.b05_best_prices - INFO -     Обработано 2000/12035 окон (16.6%)
+2025-08-22 22:28:34,819 - oflow.blocks.b05_best_prices - INFO -     Обработано 3000/12035 окон (24.9%)
+2025-08-22 22:28:38,621 - oflow.blocks.b05_best_prices - INFO -     Обработано 4000/12035 окон (33.2%)
+2025-08-22 22:28:43,416 - oflow.blocks.b05_best_prices - INFO -     Обработано 5000/12035 окон (41.5%)
+2025-08-22 22:28:48,506 - oflow.blocks.b05_best_prices - INFO -     Обработано 6000/12035 окон (49.9%)
+2025-08-22 22:28:52,475 - oflow.blocks.b05_best_prices - INFO -     Обработано 7000/12035 окон (58.2%)
+2025-08-22 22:28:56,412 - oflow.blocks.b05_best_prices - INFO -     Обработано 8000/12035 окон (66.5%)
+2025-08-22 22:29:01,128 - oflow.blocks.b05_best_prices - INFO -     Обработано 9000/12035 окон (74.8%)
+2025-08-22 22:29:05,256 - oflow.blocks.b05_best_prices - INFO -     Обработано 10000/12035 окон (83.1%)
+2025-08-22 22:29:09,329 - oflow.blocks.b05_best_prices - INFO -     Обработано 11000/12035 окон (91.4%)
+2025-08-22 22:29:13,486 - oflow.blocks.b05_best_prices - INFO -     Обработано 12000/12035 окон (99.7%)
+2025-08-22 22:29:13,661 - oflow.blocks.b05_best_prices - INFO - Биржа 2/6: bybit_futures
+2025-08-22 22:29:14,411 - oflow.blocks.b05_best_prices - INFO -   Временных окон: 24060
+2025-08-22 22:29:20,499 - oflow.blocks.b05_best_prices - INFO -     Обработано 1000/24060 окон (4.2%)
+2025-08-22 22:29:26,521 - oflow.blocks.b05_best_prices - INFO -     Обработано 2000/24060 окон (8.3%)
+2025-08-22 22:29:32,894 - oflow.blocks.b05_best_prices - INFO -     Обработано 3000/24060 окон (12.5%)
+2025-08-22 22:29:38,946 - oflow.blocks.b05_best_prices - INFO -     Обработано 4000/24060 окон (16.6%)
+2025-08-22 22:29:45,129 - oflow.blocks.b05_best_prices - INFO -     Обработано 5000/24060 окон (20.8%)
+2025-08-22 22:29:52,298 - oflow.blocks.b05_best_prices - INFO -     Обработано 6000/24060 окон (24.9%)
+2025-08-22 22:29:58,563 - oflow.blocks.b05_best_prices - INFO -     Обработано 7000/24060 окон (29.1%)
+2025-08-22 22:30:04,941 - oflow.blocks.b05_best_prices - INFO -     Обработано 8000/24060 окон (33.3%)
+2025-08-22 22:30:11,574 - oflow.blocks.b05_best_prices - INFO -     Обработано 9000/24060 окон (37.4%)
+2025-08-22 22:30:18,162 - oflow.blocks.b05_best_prices - INFO -     Обработано 10000/24060 окон (41.6%)
+2025-08-22 22:30:24,593 - oflow.blocks.b05_best_prices - INFO -     Обработано 11000/24060 окон (45.7%)
+2025-08-22 22:30:31,638 - oflow.blocks.b05_best_prices - INFO -     Обработано 12000/24060 окон (49.9%)
+2025-08-22 22:30:38,417 - oflow.blocks.b05_best_prices - INFO -     Обработано 13000/24060 окон (54.0%)
+2025-08-22 22:30:44,879 - oflow.blocks.b05_best_prices - INFO -     Обработано 14000/24060 окон (58.2%)
+2025-08-22 22:30:53,207 - oflow.blocks.b05_best_prices - INFO -     Обработано 15000/24060 окон (62.3%)
+2025-08-22 22:30:59,902 - oflow.blocks.b05_best_prices - INFO -     Обработано 16000/24060 окон (66.5%)
+2025-08-22 22:31:06,473 - oflow.blocks.b05_best_prices - INFO -     Обработано 17000/24060 окон (70.7%)
+2025-08-22 22:31:13,032 - oflow.blocks.b05_best_prices - INFO -     Обработано 18000/24060 окон (74.8%)
+2025-08-22 22:31:19,625 - oflow.blocks.b05_best_prices - INFO -     Обработано 19000/24060 окон (79.0%)
+2025-08-22 22:31:26,228 - oflow.blocks.b05_best_prices - INFO -     Обработано 20000/24060 окон (83.1%)
+2025-08-22 22:31:33,025 - oflow.blocks.b05_best_prices - INFO -     Обработано 21000/24060 окон (87.3%)
+2025-08-22 22:31:39,706 - oflow.blocks.b05_best_prices - INFO -     Обработано 22000/24060 окон (91.4%)
+2025-08-22 22:31:46,414 - oflow.blocks.b05_best_prices - INFO -     Обработано 23000/24060 окон (95.6%)
+2025-08-22 22:31:53,378 - oflow.blocks.b05_best_prices - INFO -     Обработано 24000/24060 окон (99.8%)
+2025-08-22 22:31:54,153 - oflow.blocks.b05_best_prices - INFO - Биржа 3/6: okx_spot
+2025-08-22 22:31:55,532 - oflow.blocks.b05_best_prices - INFO -   Временных окон: 23532
+2025-08-22 22:32:00,813 - oflow.blocks.b05_best_prices - INFO -     Обработано 1000/23532 окон (4.2%)
+2025-08-22 22:32:05,836 - oflow.blocks.b05_best_prices - INFO -     Обработано 2000/23532 окон (8.5%)
+2025-08-22 22:32:10,815 - oflow.blocks.b05_best_prices - INFO -     Обработано 3000/23532 окон (12.7%)
+2025-08-22 22:32:15,777 - oflow.blocks.b05_best_prices - INFO -     Обработано 4000/23532 окон (17.0%)
+2025-08-22 22:32:20,757 - oflow.blocks.b05_best_prices - INFO -     Обработано 5000/23532 окон (21.2%)
+2025-08-22 22:32:25,782 - oflow.blocks.b05_best_prices - INFO -     Обработано 6000/23532 окон (25.5%)
+2025-08-22 22:32:30,923 - oflow.blocks.b05_best_prices - INFO -     Обработано 7000/23532 окон (29.7%)
+2025-08-22 22:32:36,088 - oflow.blocks.b05_best_prices - INFO -     Обработано 8000/23532 окон (34.0%)
+2025-08-22 22:32:41,220 - oflow.blocks.b05_best_prices - INFO -     Обработано 9000/23532 окон (38.2%)
+2025-08-22 22:32:46,312 - oflow.blocks.b05_best_prices - INFO -     Обработано 10000/23532 окон (42.5%)
+2025-08-22 22:32:51,721 - oflow.blocks.b05_best_prices - INFO -     Обработано 11000/23532 окон (46.7%)
+2025-08-22 22:32:57,799 - oflow.blocks.b05_best_prices - INFO -     Обработано 12000/23532 окон (51.0%)
+2025-08-22 22:33:03,726 - oflow.blocks.b05_best_prices - INFO -     Обработано 13000/23532 окон (55.2%)
+2025-08-22 22:33:08,935 - oflow.blocks.b05_best_prices - INFO -     Обработано 14000/23532 окон (59.5%)
+2025-08-22 22:33:14,158 - oflow.blocks.b05_best_prices - INFO -     Обработано 15000/23532 окон (63.7%)
+2025-08-22 22:33:19,712 - oflow.blocks.b05_best_prices - INFO -     Обработано 16000/23532 окон (68.0%)
+2025-08-22 22:33:25,115 - oflow.blocks.b05_best_prices - INFO -     Обработано 17000/23532 окон (72.2%)
+2025-08-22 22:33:30,612 - oflow.blocks.b05_best_prices - INFO -     Обработано 18000/23532 окон (76.5%)
+2025-08-22 22:33:36,517 - oflow.blocks.b05_best_prices - INFO -     Обработано 19000/23532 окон (80.7%)
+2025-08-22 22:33:41,814 - oflow.blocks.b05_best_prices - INFO -     Обработано 20000/23532 окон (85.0%)
+2025-08-22 22:33:47,221 - oflow.blocks.b05_best_prices - INFO -     Обработано 21000/23532 окон (89.2%)
+2025-08-22 22:33:52,621 - oflow.blocks.b05_best_prices - INFO -     Обработано 22000/23532 окон (93.5%)
+2025-08-22 22:33:57,967 - oflow.blocks.b05_best_prices - INFO -     Обработано 23000/23532 окон (97.7%)
+2025-08-22 22:34:02,004 - oflow.blocks.b05_best_prices - INFO - Биржа 4/6: okx_futures
+2025-08-22 22:34:02,903 - oflow.blocks.b05_best_prices - INFO -   Временных окон: 24028
+2025-08-22 22:34:10,372 - oflow.blocks.b05_best_prices - INFO -     Обработано 1000/24028 окон (4.2%)
+2025-08-22 22:34:17,624 - oflow.blocks.b05_best_prices - INFO -     Обработано 2000/24028 окон (8.3%)
+2025-08-22 22:34:25,093 - oflow.blocks.b05_best_prices - INFO -     Обработано 3000/24028 окон (12.5%)
+2025-08-22 22:34:32,973 - oflow.blocks.b05_best_prices - INFO -     Обработано 4000/24028 окон (16.6%)
+2025-08-22 22:34:41,021 - oflow.blocks.b05_best_prices - INFO -     Обработано 5000/24028 окон (20.8%)
+2025-08-22 22:34:48,374 - oflow.blocks.b05_best_prices - INFO -     Обработано 6000/24028 окон (25.0%)
+2025-08-22 22:34:55,691 - oflow.blocks.b05_best_prices - INFO -     Обработано 7000/24028 окон (29.1%)
+2025-08-22 22:35:08,416 - oflow.blocks.b05_best_prices - INFO -     Обработано 8000/24028 окон (33.3%)
+2025-08-22 22:35:16,407 - oflow.blocks.b05_best_prices - INFO -     Обработано 9000/24028 окон (37.5%)
+2025-08-22 22:35:24,470 - oflow.blocks.b05_best_prices - INFO -     Обработано 10000/24028 окон (41.6%)
+2025-08-22 22:35:32,664 - oflow.blocks.b05_best_prices - INFO -     Обработано 11000/24028 окон (45.8%)
+2025-08-22 22:35:40,374 - oflow.blocks.b05_best_prices - INFO -     Обработано 12000/24028 окон (49.9%)
+2025-08-22 22:35:48,124 - oflow.blocks.b05_best_prices - INFO -     Обработано 13000/24028 окон (54.1%)
+2025-08-22 22:35:56,066 - oflow.blocks.b05_best_prices - INFO -     Обработано 14000/24028 окон (58.3%)
+2025-08-22 22:36:03,699 - oflow.blocks.b05_best_prices - INFO -     Обработано 15000/24028 окон (62.4%)
+2025-08-22 22:36:13,224 - oflow.blocks.b05_best_prices - INFO -     Обработано 16000/24028 окон (66.6%)
+2025-08-22 22:36:21,158 - oflow.blocks.b05_best_prices - INFO -     Обработано 17000/24028 окон (70.8%)
+2025-08-22 22:36:29,235 - oflow.blocks.b05_best_prices - INFO -     Обработано 18000/24028 окон (74.9%)
+2025-08-22 22:36:37,399 - oflow.blocks.b05_best_prices - INFO -     Обработано 19000/24028 окон (79.1%)
+2025-08-22 22:36:45,621 - oflow.blocks.b05_best_prices - INFO -     Обработано 20000/24028 окон (83.2%)
+2025-08-22 22:36:53,688 - oflow.blocks.b05_best_prices - INFO -     Обработано 21000/24028 окон (87.4%)
+2025-08-22 22:37:02,021 - oflow.blocks.b05_best_prices - INFO -     Обработано 22000/24028 окон (91.6%)
+2025-08-22 22:37:11,863 - oflow.blocks.b05_best_prices - INFO -     Обработано 23000/24028 окон (95.7%)
+2025-08-22 22:37:20,315 - oflow.blocks.b05_best_prices - INFO -     Обработано 24000/24028 окон (99.9%)
+2025-08-22 22:37:20,556 - oflow.blocks.b05_best_prices - INFO - Биржа 5/6: binance_spot
+2025-08-22 22:37:21,373 - oflow.blocks.b05_best_prices - INFO -   Временных окон: 24038
+2025-08-22 22:37:26,364 - oflow.blocks.b05_best_prices - INFO -     Обработано 1000/24038 окон (4.2%)
+2025-08-22 22:37:31,344 - oflow.blocks.b05_best_prices - INFO -     Обработано 2000/24038 окон (8.3%)
+2025-08-22 22:37:36,327 - oflow.blocks.b05_best_prices - INFO -     Обработано 3000/24038 окон (12.5%)
+2025-08-22 22:37:41,381 - oflow.blocks.b05_best_prices - INFO -     Обработано 4000/24038 окон (16.6%)
+2025-08-22 22:37:46,460 - oflow.blocks.b05_best_prices - INFO -     Обработано 5000/24038 окон (20.8%)
+2025-08-22 22:37:51,476 - oflow.blocks.b05_best_prices - INFO -     Обработано 6000/24038 окон (25.0%)
+2025-08-22 22:37:56,613 - oflow.blocks.b05_best_prices - INFO -     Обработано 7000/24038 окон (29.1%)
+2025-08-22 22:38:01,778 - oflow.blocks.b05_best_prices - INFO -     Обработано 8000/24038 окон (33.3%)
+2025-08-22 22:38:06,923 - oflow.blocks.b05_best_prices - INFO -     Обработано 9000/24038 окон (37.4%)
+2025-08-22 22:38:13,271 - oflow.blocks.b05_best_prices - INFO -     Обработано 10000/24038 окон (41.6%)
+2025-08-22 22:38:18,505 - oflow.blocks.b05_best_prices - INFO -     Обработано 11000/24038 окон (45.8%)
+2025-08-22 22:38:23,746 - oflow.blocks.b05_best_prices - INFO -     Обработано 12000/24038 окон (49.9%)
+2025-08-22 22:38:29,236 - oflow.blocks.b05_best_prices - INFO -     Обработано 13000/24038 окон (54.1%)
+2025-08-22 22:38:34,554 - oflow.blocks.b05_best_prices - INFO -     Обработано 14000/24038 окон (58.2%)
+2025-08-22 22:38:39,858 - oflow.blocks.b05_best_prices - INFO -     Обработано 15000/24038 окон (62.4%)
+2025-08-22 22:38:45,202 - oflow.blocks.b05_best_prices - INFO -     Обработано 16000/24038 окон (66.6%)
+2025-08-22 22:38:50,600 - oflow.blocks.b05_best_prices - INFO -     Обработано 17000/24038 окон (70.7%)
+2025-08-22 22:38:56,084 - oflow.blocks.b05_best_prices - INFO -     Обработано 18000/24038 окон (74.9%)
+2025-08-22 22:39:01,732 - oflow.blocks.b05_best_prices - INFO -     Обработано 19000/24038 окон (79.0%)
+2025-08-22 22:39:07,244 - oflow.blocks.b05_best_prices - INFO -     Обработано 20000/24038 окон (83.2%)
+2025-08-22 22:39:14,416 - oflow.blocks.b05_best_prices - INFO -     Обработано 21000/24038 окон (87.4%)
+2025-08-22 22:39:19,939 - oflow.blocks.b05_best_prices - INFO -     Обработано 22000/24038 окон (91.5%)
+2025-08-22 22:39:25,551 - oflow.blocks.b05_best_prices - INFO -     Обработано 23000/24038 окон (95.7%)
+2025-08-22 22:39:31,205 - oflow.blocks.b05_best_prices - INFO -     Обработано 24000/24038 окон (99.8%)
+2025-08-22 22:39:31,473 - oflow.blocks.b05_best_prices - INFO - Биржа 6/6: binance_futures_futures
+2025-08-22 22:39:32,701 - oflow.blocks.b05_best_prices - INFO -   Временных окон: 23556
+2025-08-22 22:39:42,486 - oflow.blocks.b05_best_prices - INFO -     Обработано 1000/23556 окон (4.2%)
+2025-08-22 22:39:52,524 - oflow.blocks.b05_best_prices - INFO -     Обработано 2000/23556 окон (8.5%)
+2025-08-22 22:40:02,399 - oflow.blocks.b05_best_prices - INFO -     Обработано 3000/23556 окон (12.7%)
+2025-08-22 22:40:12,315 - oflow.blocks.b05_best_prices - INFO -     Обработано 4000/23556 окон (17.0%)
+2025-08-22 22:40:24,062 - oflow.blocks.b05_best_prices - INFO -     Обработано 5000/23556 окон (21.2%)
+2025-08-22 22:40:34,965 - oflow.blocks.b05_best_prices - INFO -     Обработано 6000/23556 окон (25.5%)
+2025-08-22 22:40:45,207 - oflow.blocks.b05_best_prices - INFO -     Обработано 7000/23556 окон (29.7%)
+2025-08-22 22:40:55,683 - oflow.blocks.b05_best_prices - INFO -     Обработано 8000/23556 окон (34.0%)
+2025-08-22 22:41:06,105 - oflow.blocks.b05_best_prices - INFO -     Обработано 9000/23556 окон (38.2%)
+2025-08-22 22:41:16,545 - oflow.blocks.b05_best_prices - INFO -     Обработано 10000/23556 окон (42.5%)
+2025-08-22 22:41:28,282 - oflow.blocks.b05_best_prices - INFO -     Обработано 11000/23556 окон (46.7%)
+2025-08-22 22:41:39,189 - oflow.blocks.b05_best_prices - INFO -     Обработано 12000/23556 окон (50.9%)
+2025-08-22 22:41:50,116 - oflow.blocks.b05_best_prices - INFO -     Обработано 13000/23556 окон (55.2%)
+2025-08-22 22:42:01,010 - oflow.blocks.b05_best_prices - INFO -     Обработано 14000/23556 окон (59.4%)
+2025-08-22 22:42:11,994 - oflow.blocks.b05_best_prices - INFO -     Обработано 15000/23556 окон (63.7%)
+2025-08-22 22:42:24,486 - oflow.blocks.b05_best_prices - INFO -     Обработано 16000/23556 окон (67.9%)
+2025-08-22 22:42:35,303 - oflow.blocks.b05_best_prices - INFO -     Обработано 17000/23556 окон (72.2%)
+2025-08-22 22:42:46,404 - oflow.blocks.b05_best_prices - INFO -     Обработано 18000/23556 окон (76.4%)
+2025-08-22 22:42:57,597 - oflow.blocks.b05_best_prices - INFO -     Обработано 19000/23556 окон (80.7%)
+2025-08-22 22:43:08,923 - oflow.blocks.b05_best_prices - INFO -     Обработано 20000/23556 окон (84.9%)
+2025-08-22 22:43:20,553 - oflow.blocks.b05_best_prices - INFO -     Обработано 21000/23556 окон (89.1%)
+2025-08-22 22:43:34,172 - oflow.blocks.b05_best_prices - INFO -     Обработано 22000/23556 окон (93.4%)
+2025-08-22 22:43:45,741 - oflow.blocks.b05_best_prices - INFO -     Обработано 23000/23556 окон (97.6%)
+2025-08-22 22:43:52,558 - oflow.blocks.b05_best_prices - INFO - Восстановлено 128682 quotes для 6 бирж
+2025-08-22 22:43:52,560 - oflow.blocks.b05_best_prices - INFO - Временной диапазон: 1753298089570000000 - 1753300799810000000
+2025-08-22 22:43:52,574 - oflow.blocks.b05_best_prices - INFO -   bybit_spot: 11942 quotes
+2025-08-22 22:43:52,582 - oflow.blocks.b05_best_prices - INFO -   bybit_futures: 24022 quotes
+2025-08-22 22:43:52,596 - oflow.blocks.b05_best_prices - INFO -   okx_spot: 21792 quotes
+2025-08-22 22:43:52,605 - oflow.blocks.b05_best_prices - INFO -   okx_futures: 23861 quotes
+2025-08-22 22:43:52,615 - oflow.blocks.b05_best_prices - INFO -   binance_spot: 23509 quotes
+2025-08-22 22:43:52,626 - oflow.blocks.b05_best_prices - INFO -   binance_futures_futures: 23556 quotes
+2025-08-22 22:43:53,170 - oflow.blocks.b05_best_prices - INFO - Этап 2/4: Вычисление спредов и метрик
+2025-08-22 22:43:53,171 - oflow.blocks.b05_best_prices - INFO - Вычисление спредов...
+2025-08-22 22:43:53,542 - oflow.blocks.b05_best_prices - INFO - Статистика спредов:
+2025-08-22 22:43:53,543 - oflow.blocks.b05_best_prices - INFO -   Абсолютный спред: 0.0100 - 765.3400
+2025-08-22 22:43:53,545 - oflow.blocks.b05_best_prices - INFO -   Относительный спред: 0.0003% - 21.1576%
+2025-08-22 22:43:53,566 - oflow.blocks.b05_best_prices - INFO -   bybit_spot: средний спред 0.4825 (0.0134%)
+2025-08-22 22:43:53,579 - oflow.blocks.b05_best_prices - INFO -   bybit_futures: средний спред 0.2586 (0.0072%)
+2025-08-22 22:43:53,600 - oflow.blocks.b05_best_prices - INFO -   okx_spot: средний спред 0.7514 (0.0209%)
+2025-08-22 22:43:53,612 - oflow.blocks.b05_best_prices - INFO -   okx_futures: средний спред 0.1859 (0.0052%)
+2025-08-22 22:43:53,634 - oflow.blocks.b05_best_prices - INFO -   binance_spot: средний спред 8.6773 (0.2526%)
+2025-08-22 22:43:53,645 - oflow.blocks.b05_best_prices - INFO -   binance_futures_futures: средний спред 0.0630 (0.0018%)
+2025-08-22 22:43:53,647 - oflow.blocks.b05_best_prices - INFO - Этап 3/4: Агрегация по временным тикам
+2025-08-22 22:43:53,647 - oflow.blocks.b05_best_prices - INFO - Агрегация quotes по тикам 10ms...
+2025-08-22 22:43:53,695 - oflow.blocks.b05_best_prices - INFO - Создано 78504 тиковых окон
+2025-08-22 22:47:17,331 - oflow.blocks.b05_best_prices - INFO - Агрегировано 128682 тиковых quotes
+2025-08-22 22:47:17,334 - oflow.blocks.b05_best_prices - INFO - Среднее количество quotes на тик: 1.0
+2025-08-22 22:47:17,351 - oflow.blocks.b05_best_prices - INFO -   bybit_spot: 11942 тиковых quotes
+2025-08-22 22:47:17,362 - oflow.blocks.b05_best_prices - INFO -   bybit_futures: 24022 тиковых quotes
+2025-08-22 22:47:17,378 - oflow.blocks.b05_best_prices - INFO -   okx_spot: 21792 тиковых quotes
+2025-08-22 22:47:17,388 - oflow.blocks.b05_best_prices - INFO -   okx_futures: 23861 тиковых quotes
+2025-08-22 22:47:17,406 - oflow.blocks.b05_best_prices - INFO -   binance_spot: 23509 тиковых quotes
+2025-08-22 22:47:17,417 - oflow.blocks.b05_best_prices - INFO -   binance_futures_futures: 23556 тиковых quotes
+2025-08-22 22:47:17,476 - oflow.blocks.b05_best_prices - INFO - Этап 4/4: Валидация качества и сохранение
+2025-08-22 22:47:17,477 - oflow.blocks.b05_best_prices - INFO - Валидация quotes...
+2025-08-22 22:47:17,488 - oflow.blocks.b05_best_prices - WARNING - Обнаружено 1 больших временных разрывов (>1с)
+2025-08-22 22:47:17,491 - oflow.blocks.b05_best_prices - WARNING - Найдено 511 подозрительно больших спредов (>10%)
+2025-08-22 22:47:17,501 - oflow.blocks.b05_best_prices - INFO - === МЕТРИКИ КАЧЕСТВА QUOTES ===
+2025-08-22 22:47:17,504 - oflow.blocks.b05_best_prices - INFO - bid_ask_valid: 1.000
+2025-08-22 22:47:17,504 - oflow.blocks.b05_best_prices - INFO - completeness: 1.000
+2025-08-22 22:47:17,504 - oflow.blocks.b05_best_prices - INFO - time_coverage: 1.000
+2025-08-22 22:47:17,505 - oflow.blocks.b05_best_prices - INFO - distribution_balance: 0.960
+2025-08-22 22:47:17,505 - oflow.blocks.b05_best_prices - INFO - overall_quality: 0.990
+2025-08-22 22:47:17,505 - oflow.blocks.b05_best_prices - INFO - 🟢 Качество quotes: ОТЛИЧНОЕ
+2025-08-22 22:47:17,507 - oflow.blocks.b05_best_prices - INFO - Сохранение quotes в data\quotes\quotes.parquet...
+2025-08-22 22:47:17,733 - oflow.blocks.b05_best_prices - INFO - Quotes сохранены: 128682 строк
+2025-08-22 22:47:17,734 - oflow.blocks.b05_best_prices - INFO - Размер файла: 9.1 MB
+2025-08-22 22:47:17,734 - oflow.blocks.b05_best_prices - INFO - Путь: data\quotes\quotes.parquet
+2025-08-22 22:47:17,742 - oflow.blocks.b05_best_prices - INFO - Распределение по биржам:
+2025-08-22 22:47:17,743 - oflow.blocks.b05_best_prices - INFO -   bybit_futures: 24,022 quotes
+2025-08-22 22:47:17,744 - oflow.blocks.b05_best_prices - INFO -   okx_futures: 23,861 quotes
+2025-08-22 22:47:17,744 - oflow.blocks.b05_best_prices - INFO -   binance_futures_futures: 23,556 quotes
+2025-08-22 22:47:17,745 - oflow.blocks.b05_best_prices - INFO -   binance_spot: 23,509 quotes
+2025-08-22 22:47:17,745 - oflow.blocks.b05_best_prices - INFO -   okx_spot: 21,792 quotes
+2025-08-22 22:47:17,745 - oflow.blocks.b05_best_prices - INFO -   bybit_spot: 11,942 quotes
+2025-08-22 22:47:17,746 - oflow.blocks.b05_best_prices - INFO - === ИТОГИ ВОССТАНОВЛЕНИЯ QUOTES ===
+2025-08-22 22:47:17,746 - oflow.blocks.b05_best_prices - INFO - Исходные depth записи: 10,958,217
+2025-08-22 22:47:17,746 - oflow.blocks.b05_best_prices - INFO - Восстановлено quotes: 128,682
+2025-08-22 22:47:17,747 - oflow.blocks.b05_best_prices - INFO - Коэффициент восстановления: 1.17%
+2025-08-22 22:47:17,747 - oflow.blocks.b05_best_prices - INFO - Общее качество: 0.990
+2025-08-22 22:47:17,763 - oflow.blocks.b05_best_prices - INFO -   bybit_spot: 11,942 quotes
+2025-08-22 22:47:17,780 - oflow.blocks.b05_best_prices - INFO -   bybit_futures: 24,022 quotes
+2025-08-22 22:47:17,793 - oflow.blocks.b05_best_prices - INFO -   okx_spot: 21,792 quotes
+2025-08-22 22:47:17,808 - oflow.blocks.b05_best_prices - INFO -   okx_futures: 23,861 quotes
+2025-08-22 22:47:17,824 - oflow.blocks.b05_best_prices - INFO -   binance_spot: 23,509 quotes
+2025-08-22 22:47:17,838 - oflow.blocks.b05_best_prices - INFO -   binance_futures_futures: 23,556 quotes
+2025-08-22 22:47:17,839 - oflow.blocks.b05_best_prices - INFO - ✅ Восстановление лучших цен завершено успешно!
+2025-08-22 22:47:17,840 - oflow.pipeline - INFO - Лучшие цены восстановлены
+2025-08-22 22:47:17,840 - oflow.pipeline - INFO - === БЛОК 06: ТОП-ЗОНА КНИГИ ===
+2025-08-22 22:47:17,841 - oflow.blocks.b06_book_top - INFO - Запуск анализа топ-зоны order book...
+2025-08-22 22:47:17,841 - oflow.blocks.b06_book_top - INFO - Параметры анализа: top_levels=10, tick_width=0.01
+2025-08-22 22:47:17,841 - oflow.blocks.b06_book_top - INFO - Анализ топ-уровней order book...
+2025-08-22 22:47:17,842 - oflow.blocks.b06_book_top - INFO - Анализ топ-10 уровней order book...

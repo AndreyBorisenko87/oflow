@@ -1,0 +1,42 @@
+# Источники данных для Scalping Strategy
+# Пути к данным spot и futures для всех бирж
+
+futures:
+  binance:
+    trades: data/test_small/trades_small.parquet
+    depth: data/test_small/depth_small.parquet
+  bybit:
+    trades: data/test_small/trades_small.parquet
+    depth: data/test_small/depth_small.parquet
+  okx:
+    trades: data/test_small/trades_small.parquet
+    depth: data/test_small/depth_small.parquet
+
+spot:
+  binance:
+    trades: data/test_small/trades_small.parquet
+    depth: data/test_small/depth_small.parquet
+  bybit:
+    trades: data/test_small/trades_small.parquet
+    depth: data/test_small/depth_small.parquet
+  okx:
+    trades: data/test_small/trades_small.parquet
+    depth: data/test_small/depth_small.parquet
+
+# Настройки по умолчанию
+defaults:
+  symbol: "ETHUSDT"
+  timezone: "UTC"
+  data_format: "parquet"
+  
+# Поддерживаемые форматы файлов
+supported_formats:
+  - "*.parquet"
+  - "*.jsonl"
+  - "*.csv"
+
+# Фильтры по времени (опционально)
+time_filters:
+  start_date: null  # null = все доступные данные
+  end_date: null    # null = все доступные данные
+  max_age_hours: 24 # максимальный возраст данных в часах

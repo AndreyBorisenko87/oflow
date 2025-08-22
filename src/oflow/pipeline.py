@@ -10,7 +10,7 @@ import yaml
 
 from .blocks import (
     # Блок 02: Импорт сырья
-    run_test,
+    import_raw_data,
     
     # Блок 04: Синхронизация времени
     run_time_sync,
@@ -37,7 +37,7 @@ from .blocks import (
     run_canonical,
     
     # Блок 12: Детекторы
-    LVBDetector, run_detectors,
+    run_detectors,
     
     # Блок 13: Сканер
     run_scanner,
@@ -46,7 +46,7 @@ from .blocks import (
     run_backtest,
     
     # Блок 15: Экспорт разметки
-    run_export
+    export_data
 )
 
 def setup_logging(config: Dict) -> None:
@@ -57,7 +57,7 @@ def setup_logging(config: Dict) -> None:
         level=getattr(logging, log_config.get("level", "INFO")),
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
         handlers=[
-            logging.FileHandler(log_config.get("file", "logs/oflow.log")),
+            logging.FileHandler(log_config.get("file", "logs/oflow.log"), encoding='utf-8'),
             logging.StreamHandler()
         ]
     )
@@ -99,11 +99,30 @@ def run_full_pipeline(config_dir: str = "configs", test_mode: bool = True) -> Di
     try:
         # 2. Блок 02: Импорт сырья
         logger.info("=== БЛОК 02: ИМПОРТ СЫРЬЯ ===")
+        
+        # Подготавливаем данные для импорта
+        import_data = {
+            "data_paths": [],
+            "start_time": None,
+            "end_time": None
+        }
+        
+        # Добавляем пути к данным из sources.yaml
+        if "sources" in config:
+            sources = config["sources"]
+            for market_type in ["spot", "futures"]:
+                if market_type in sources:
+                    for exchange in sources[market_type]:
+                        for data_type in ["trades", "depth"]:
+                            if data_type in sources[market_type][exchange]:
+                                import_data["data_paths"].append(sources[market_type][exchange][data_type])
+        
+        logger.info(f"Найдено {len(import_data['data_paths'])} путей к данным")
+        
         if test_mode:
-            trades_df, depth_df = run_test(config_dir)
+            trades_df, depth_df = import_raw_data(import_data, config)
         else:
-            # TODO: Реализовать полный импорт
-            trades_df, depth_df = run_test(config_dir)
+            trades_df, depth_df = import_raw_data(import_data, config)
         
         results["import"] = {"trades": trades_df, "depth": depth_df}
         logger.info(f"Импорт завершен: {len(trades_df)} trades, {len(depth_df)} depth")
@@ -168,7 +187,7 @@ def run_full_pipeline(config_dir: str = "configs", test_mode: bool = True) -> Di
         
         # 11. Блок 12: Детекторы
         logger.info("=== БЛОК 12: ДЕТЕКТОРЫ ===")
-        lvb_detector = LVBDetector(config)
+        lvb_detector = D1LiquidityVacuumBreak(config)
         detectors = [lvb_detector]
         detector_results = run_detectors(detectors, canonical_data)
         results["detectors"] = detector_results
@@ -190,7 +209,7 @@ def run_full_pipeline(config_dir: str = "configs", test_mode: bool = True) -> Di
         
         # 14. Блок 15: Экспорт разметки
         logger.info("=== БЛОК 15: ЭКСПОРТ РАЗМЕТКИ ===")
-        run_export(events_df, config)
+        export_data(events_df, config)
         results["export"] = {"status": "completed"}
         logger.info("Экспорт разметки завершен")
         
@@ -216,7 +235,27 @@ def run_test_pipeline(config_dir: str = "configs") -> Dict[str, any]:
     try:
         # Блок 02: Импорт сырья
         logger.info("=== БЛОК 02: ИМПОРТ СЫРЬЯ ===")
-        trades_df, depth_df = run_test(config_dir)
+        
+        # Подготавливаем данные для импорта
+        import_data = {
+            "data_paths": [],
+            "start_time": None,
+            "end_time": None
+        }
+        
+        # Добавляем пути к данным из sources.yaml
+        if "sources" in config:
+            sources = config["sources"]
+            for market_type in ["spot", "futures"]:
+                if market_type in sources:
+                    for exchange in sources[market_type]:
+                        for data_type in ["trades", "depth"]:
+                            if data_type in sources[market_type][exchange]:
+                                import_data["data_paths"].append(sources[market_type][exchange][data_type])
+        
+        logger.info(f"Найдено {len(import_data['data_paths'])} путей к данным")
+        
+        trades_df, depth_df = import_raw_data(import_data, config)
         results["import"] = {"trades": trades_df, "depth": depth_df}
         
         # Блок 04: Синхронизация времени
